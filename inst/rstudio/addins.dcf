@@ -1,0 +1,4 @@
+Name: Insert dashes
+Description: Inserts dashes `-` from cursor position to column 80.
+Binding: insertDashesAddin
+Interactive: false
