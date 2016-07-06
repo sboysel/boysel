@@ -11,7 +11,7 @@
 #' @seealso \code{\link[stringr]{str_trim}}
 #'
 #' @export
-trim <- function(x) gsub("^\\s|\\s$", "", x)
+trim <- function(x) gsub("^\\s+|\\s+$", "", x)
 
 #' Remove trailing newline delimeters from a character vector
 #'
@@ -23,7 +23,7 @@ trim <- function(x) gsub("^\\s|\\s$", "", x)
 #' chomp("bar")
 #'
 #' @export
-chomp <- function(x) gsub("\\n$", "", x)
+chomp <- function(x) gsub("\\n+$", "", x)
 
 #' Wrap a string using newline delimeters
 #'
