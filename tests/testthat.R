@@ -1,4 +1,4 @@
 library(testthat)
-library(rutils)
+library(boysel)
 
-test_check("rutils")
+test_check("boysel")
