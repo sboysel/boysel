@@ -1,9 +1,4 @@
----
-output: github_document
----
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
+## boysel
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -11,8 +6,6 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 ```
-
-## boysel
 
 [![Travis](https://img.shields.io/travis/sboysel/boysel.svg?style=flat-square)](https://travis-ci.org/sboysel/boysel)
 [![Codecov](https://img.shields.io/codecov/c/github/sboysel/boysel.svg?style=flat-square)](https://codecov.io/gh/sboysel/boysel)
