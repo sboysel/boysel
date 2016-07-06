@@ -1,11 +1,14 @@
-Package: rutils
+Package: boysel
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A collection of miscellaneous R functions
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Authors@R: person("Sam", "Boysel", email = "sboysel@gmail.com", 
+  role = c("aut", "cre"))
+Maintainer: Sam Boysel <sboysel@gmail.com>
+URL: https://github.com/sboysel/boysel
+BugReports: https://github.com/sboysel/boysel/issues
 Description: Contains some handy utility functions I use day to day.
-License: MIT + file LICENSE
+License: GPL-3
 LazyData: TRUE
 Imports:
   rstudioapi (>= 0.5)
