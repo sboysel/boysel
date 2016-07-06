@@ -9,10 +9,10 @@ cv(x, na.rm = FALSE)
 \arguments{
 \item{x}{a numeric vector}
 
-\item{na.rm}{Passed directly to \code{sd} and \code{mean}.}
+\item{na.rm}{Passed directly to \code{sd()} and \code{mean()}.}
 }
 \value{
-a scalar equal to sd(x) / mean(x).
+a scalar equal to \eqn{\frac{s_{x}}{\overline{x}}}.
 }
 \description{
 Calculate the coefficient of variation (i.e. variation coefficient) for

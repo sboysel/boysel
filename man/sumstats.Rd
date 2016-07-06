@@ -7,19 +7,24 @@
 sumstats(data, f = NULL, digits = 2, order = TRUE)
 }
 \arguments{
-\item{data}{a data.frame}
+\item{data}{a \code{data.frame}}
 
-\item{f}{a formula (See \code{\link[stats]{aggregate}} for details).}
+\item{f}{a formula. See the examples and \code{\link[stats]{aggregate}} for 
+details.}
 
 \item{digits}{an integer to specify the number of decimal places desired for
-the resulting summary statistics.  Passed directly to \code{round}.}
+the resulting summary statistics.  Passed directly to \code{round()}.}
 
-\item{order}{if TRUE, the rows of the resulting data.frame will be sorted
-alphabetically.  If FALSE, the rows will be sorted alphabetically according
-to the permutations of the grouping factors in by.}
+\item{order}{a logical value.  If TRUE (default), the rows of the resulting
+\code{data.frame} will be first sorted alphabetically by the variables
+specified in the left-hand side of \code{f} then according to the 
+permutations of the grouping factors specified in the right-hand side of 
+\code{f}.  If FALSE, the rows will be sorted only by permutations of the
+grouping factors.}
 }
 \value{
-a data.frame
+a \code{data.frame} in which each row represents a variable-grouping
+permutation.
 }
 \description{
 Generate a simple set of summary statistics for the numeric columns of a
@@ -27,11 +32,15 @@ data.frame over various subsets.  There are MANY other ways to do this but
 this function is suitable to my needs.
 }
 \examples{
+# All variables summarized and no grouping
 sumstats(mtcars)
 sumstats(iris)
+# Only 'Petal.Width' and 'Sepal.Width' summarize and no grouping
 sumstats(iris, cbind(Petal.Width, Sepal.Width) ~ NULL)
+# All variables summarized and grouped by 'Species'
 sumstats(iris, . ~ Species)
+# 'mpg' and 'wt' summarized by 'cyl' and 'vs'
 sumstats(mtcars, cbind(mpg, wt) ~ cyl + vs)
-sumstats(mtcars, . ~ cyl + vs)
+sumstats(mtcars, cbind(mpg, wt) ~ cyl + vs, order = FALSE)
 }
 

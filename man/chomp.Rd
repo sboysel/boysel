@@ -10,7 +10,7 @@ chomp(x)
 \item{x}{a character vector}
 }
 \value{
-a version of x without trailing newline delimiters
+a version of \code{x} without trailing newline delimiters
 }
 \description{
 Remove trailing newline delimeters from a character vector

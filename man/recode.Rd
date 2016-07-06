@@ -3,7 +3,7 @@
 \name{recode}
 \alias{binary_recode}
 \alias{recode}
-\title{Flexible}
+\title{Flexible vector recoding}
 \usage{
 recode(x, ..., .default = NULL, .na = NA, factor = FALSE)
 
@@ -14,29 +14,51 @@ binary_recode(x, one, .na = NA)
 
 \item{...}{a sequence of arguments where the name is the replacement and the
 value are the elements to be replaced.  This is opposite the behavior of
-\code{dplyr::recode} and \code{plyr::revalue}.}
+\code{dplyr::recode()} and \code{plyr::revalue()}.}
 
-\item{.default}{the value is assigned to all elements of \code{x} not 
-matching any of the replacement values in \code{...} (i.e. a catch-all 
-replacement value for anything not explicitly mapped).}
+\item{.default}{a vector of length 1.  The value is assigned to all elements 
+of \code{x} not matching any of the replacement values in \code{...} or
+\code{.na} (i.e. a catch-all replacement value for anything not explicitly 
+mapped).  If NULL (default), elements of \code{x} without a mapping in 
+\code{...} or \code{.na} remain the same (i.e. no recoding).}
 
-\item{.na}{all values in \code{.na} will be assigned NA.}
+\item{.na}{a vector.  All values in \code{.na} will be assigned \code{NA}.
+Default is that any \code{NA} values in \code{x} remain \code{NA}.}
 
 \item{factor}{If TRUE, returned the recoded version of \code{x} as a factor.
 Defaults to FALSE, in which all non-NA elements are forced to character.}
 
-\item{one}{for \code{binary_recode}, all elements of \code{x} in \code{one}
+\item{one}{for \code{binary_recode()}, all elements of \code{x} in \code{one}
 will be assigned 1, anything in \code{.na} will be assigned NA, and anything
 left over will be assigned 0.}
 }
 \value{
 a vector of the same length as \code{x} in which all substitutions
-specified in \code{...} (or \code{one} in \code{binary_recode}) are made.
+specified in \code{...} (or \code{one} in \code{binary_recode()}) are made.
+\code{binary_recode()} always returns a numeric vector while \code{recode()}
+returns a vector coerced according to the various recoding arguments provided.
 }
 \description{
 Collapse multiple original values of a vector into single new values.  An
-alternative to nested \code{ifelse} statements, \code{dplyr::recode},
-\code{plyr::revalue}, etc.
+alternative to nested \code{ifelse()} statements, \code{dplyr::recode()},
+\code{plyr::revalue()}, \code{car::recode()}, etc.
+}
+\details{
+Further information on \code{recode()}'s primary value mapping arguments:
+\describe{
+  \item{\code{...}}{Any number of named arguments in which for each
+  argument, any values occurring in \code{x} will be recoded to the name of
+  the argument.  There are no defaults in \code{recode()}, so \code{recode(x)}
+  with no additional arguments should be equivalent to \code{identity(x)}}
+  \item{\code{.na}}{Any values of \code{x} matching values in the vector
+  provided to \code{.na} will be recoded to \code{NA}.}
+  \item{\code{.default}}{Any values of \code{x} not matched by either
+  \code{...} (or \code{one}) or \code{.na} will be recoded to the value
+  passed to \code{.default}.}
+}
+\code{binary_recode()} wraps \code{recode()} but accepts only a single
+recoding argument (\code{one}) instead of \code{...}), sets
+\code{.default} to \code{0}, and always returns an integer vector.
 }
 \examples{
 s <- c("a", "b", "c", "d", "e", "f", NA)
@@ -46,5 +68,9 @@ recode(s, `1` = c("a", "b"))
 recode(s, `1` = c("a", "b"), factor = TRUE)
 binary_recode(s, one = c("a", "b"))
 
+}
+\seealso{
+\code{\link[dplyr]{recode}}, \code{\link[plyr]{revalue}}, 
+\code{\link[car]{recode}}.
 }
 

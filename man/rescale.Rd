@@ -4,33 +4,36 @@
 \alias{rescale}
 \title{Rescale a numeric vector}
 \usage{
-rescale(x, type = "standardize", ...)
+rescale(x, method = "standardize", ...)
 }
 \arguments{
 \item{x}{a numeric vector}
 
-\item{type}{character string specifying the type of scaling.  Currently supported
-options include 'standardize', 'unit.range', and 'unit.length'.}
+\item{method}{character string specifying the type of scaling.  Currently 
+supported options include 'standardize', 'unit.range', and 'unit.length'.}
 
-\item{...}{additional parameters passed to specific rescaling functions (e.g. na.rm)}
+\item{...}{additional parameters passed to specific rescaling functions 
+(e.g. \code{na.rm}).}
 }
 \value{
-a numeric vector of equal length as x, rescaled according to the procedure chosen
-in 'type'.
-
+a numeric vector of equal length as x, rescaled according to the 
+procedure chosen in 'type'.
+}
+\description{
+Rescale a numeric vector
+}
+\details{
+Supported rescaling methods:
 \itemize{
   \item 'standardize': scale(x, ...)
   \item 'unit.range': (x - min(x, ...)) / (max(x, ...) - min(x, ...))
   \item 'unit.length' x / sqrt(sum(x^2, ...))
 }
 }
-\description{
-Rescale a numeric vector
-}
 \examples{
 test <- c(NA, 1, 2, 3)
 \dontrun{ 
-# Undefined rescaling type chosen
+# Will fail for undefined rescale method
 rescale(test, "foo")
 # Will fail on non-numeric vectors
 rescale(letters)

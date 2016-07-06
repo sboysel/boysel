@@ -10,7 +10,7 @@ n(x)
 \item{x}{a vector}
 }
 \value{
-the number of non-NA observations in x as an integer.
+the number of non-NA observations in \code{x} as an integer.
 }
 \description{
 Count the number of non-NA observations in a vector

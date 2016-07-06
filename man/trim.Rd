@@ -10,7 +10,7 @@ trim(x)
 \item{x}{a character vector}
 }
 \value{
-a version of x without trailing OR leading spaces
+a version of \code{x} without trailing OR leading spaces
 }
 \description{
 Remove trailing and leading spaces from a character vector

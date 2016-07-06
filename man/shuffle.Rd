@@ -7,18 +7,20 @@
 shuffle(x)
 }
 \arguments{
-\item{x}{Either a vector, list, matrix, or data.frame}
+\item{x}{Either a vector, list, matrix, or \code{data.frame}}
 }
 \value{
-an object with the elements of x ordered in a random permutation
+an object of the same type as \code{x} with elements ordered in a 
+random permutation.
 }
 \description{
 Shuffle an object
 }
 \examples{
-shuffle(1:6)
-shuffle(letters[1:6])
-shuffle(diag(6))
+shuffle(1:5)
+shuffle(letters[1:5])
+shuffle(as.list(letters[1:5]))
+shuffle(diag(5))
 shuffle(mtcars)
 
 }

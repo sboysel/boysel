@@ -9,11 +9,12 @@ text_wrap(x, n = 20L)
 \arguments{
 \item{x}{a character vector}
 
-\item{n}{an integer of length 1.  \code{tex_wrap} will return #'}
+\item{n}{an integer of length 1.  \code{text_wrap()} will silently coerce
+any numeric value passed to \code{n} to an integer.}
 }
 \value{
 a version of x in which each element substitutes newline delimiters
-for the immediate next space (e.g. ' ') after every nth character.
+for the immediate next space (e.g. ' ') after every \code{n}th character.
 }
 \description{
 Wrap a string using newline delimeters
@@ -26,7 +27,8 @@ cat(paste0(text_wrap(s), "\\n"))
 
 }
 \references{
-I attribute this regular expression to StackOverflow user xiechao:
+I attribute the regular expression that powers \code{text_wrap()} 
+to StackOverflow user xiechao: 
 \url{http://stackoverflow.com/a/2352006/3277821}
 }
 

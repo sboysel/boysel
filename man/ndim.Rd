@@ -10,7 +10,7 @@ ndim(x)
 \item{x}{a object}
 }
 \value{
-the number dimensions in x
+the number dimensions in \code{x}
 }
 \description{
 Count the number of dimensions in an object

@@ -4,8 +4,8 @@
 #' a vector.
 #'
 #' @param x a numeric vector
-#' @param na.rm Passed directly to \code{sd} and \code{mean}.
-#' @return a scalar equal to sd(x) / mean(x).
+#' @param na.rm Passed directly to \code{sd()} and \code{mean()}.
+#' @return a scalar equal to \eqn{\frac{s_{x}}{\overline{x}}}.
 #'
 #' @examples
 #' x <- 1:5
@@ -27,26 +27,33 @@ cv <- function(x, na.rm = FALSE) {
 #' data.frame over various subsets.  There are MANY other ways to do this but
 #' this function is suitable to my needs.
 #'
-#' @param data a data.frame
-#' @param f a formula (See \code{\link[stats]{aggregate}} for details).
+#' @param data a \code{data.frame}
+#' @param f a formula. See the examples and \code{\link[stats]{aggregate}} for 
+#' details.
 #' @param digits an integer to specify the number of decimal places desired for
-#' the resulting summary statistics.  Passed directly to \code{round}.
-#' @param order if TRUE, the rows of the resulting data.frame will be sorted
-#' alphabetically.  If FALSE, the rows will be sorted alphabetically according
-#' to the permutations of the grouping factors in by.
-#' @return a data.frame
+#' the resulting summary statistics.  Passed directly to \code{round()}.
+#' @param order a logical value.  If TRUE (default), the rows of the resulting
+#' \code{data.frame} will be first sorted alphabetically by the variables
+#' specified in the left-hand side of \code{f} then according to the 
+#' permutations of the grouping factors specified in the right-hand side of 
+#' \code{f}.  If FALSE, the rows will be sorted only by permutations of the
+#' grouping factors.
+#' @return a \code{data.frame} in which each row represents a variable-grouping
+#' permutation.
 #'
 #' @examples
+#' # All variables summarized and no grouping
 #' sumstats(mtcars)
 #' sumstats(iris)
+#' # Only 'Petal.Width' and 'Sepal.Width' summarize and no grouping
 #' sumstats(iris, cbind(Petal.Width, Sepal.Width) ~ NULL)
+#' # All variables summarized and grouped by 'Species'
 #' sumstats(iris, . ~ Species)
+#' # 'mpg' and 'wt' summarized by 'cyl' and 'vs'
 #' sumstats(mtcars, cbind(mpg, wt) ~ cyl + vs)
-#' sumstats(mtcars, . ~ cyl + vs)
+#' sumstats(mtcars, cbind(mpg, wt) ~ cyl + vs, order = FALSE)
 #' @export
 sumstats <- function(data, f = NULL, digits = 2, order = TRUE) {
-  # TODO:
-  # - sumstats: add subset parameters                                   [ ]
   if (is.null(f)) {
     data <- data[sapply(data, is.numeric)]
     summ <- sapply(data, function(x) {

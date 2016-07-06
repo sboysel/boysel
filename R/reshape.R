@@ -1,22 +1,31 @@
 #' Reshape the Stata way
 #' 
-#' Wraps the \code{R} function \code{reshape} to mimic the behavior of the 
+#' Wraps the function \code{base::reshape()} to mimic the behavior of the 
 #' Stata \code{reshape}.  Used to transform data.frames between "wide" and
 #' "long" formats.
 #'
-#' @param data a data.frame
-#' @param stub a character string.  For \code{wide_to_long}, this is the
+#' @param data a \code{data.frame}
+#' @param stub a character string.  For \code{wide_to_long()}, this is the
 #' leading character "stub" common to all varying columns to be collected into
-#' rows.  For \code{long_to_wide}, this is the name of the variable to be
-#' spread into columns.
-#' @param i a string
-#' @param j a string
-#' @param clean a boolean value.  If TRUE, the resulting data.frame is tidied
-#' automatically: attribute information from \code{reshape} is removed, row
-#' names are reset to a numeric sequence, and column names are stripped of
-#' dots.  Set to FALSE if you would like the immediate result from
-#' \code{reshape}.
-#' @return a data.frame.
+#' rows.  For \code{long_to_wide()}, this is the name of the variable to be
+#' prefixed to the values of \code{j} and spread into columns.
+#' @param i a string.  The name of the column in \code{data} that uniquely
+#' identifies each observation.
+#' @param j a string.  For \code{wide_to_long()}, this will be the name for the
+#' new column that captures the values of the varying colums that follow the
+#' value passed to \code{stub}.  For \code{long_to_wide()}, this is the name of
+#' an existing column, the values of which we be suffixed to \code{stub} as the
+#' observations are spread into 'wide' format.
+#' @param clean a logical value.  If TRUE, the resulting \code{data.frame} is 
+#' tidied automatically: attribute information from \code{reshape()} is 
+#' removed, row names are reset to a numeric sequence, and column names are 
+#' stripped of dots.  Set to FALSE if you would like the immediate result from
+#' \code{reshape()}.
+#' @return a \code{data.frame}.
+#'
+#' @details \code{wide_to_long()} and \code{long_to_wide()} are designed to
+#' closely mimic basic functionality of Stata's \code{reshape} command.  See
+#' the examples below for intended usage.
 #'
 #' @examples
 #' t <- "id,sex,inc80,inc81,inc82

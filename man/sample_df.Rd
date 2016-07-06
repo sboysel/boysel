@@ -7,12 +7,12 @@
 sample_df(data, n)
 }
 \arguments{
-\item{data}{a data.frame}
+\item{data}{a \code{data.frame}}
 
-\item{n}{either a positive integer or a fraction between 0 and 1.}
+\item{n}{Either a positive integer or a fraction between 0 and 1}
 }
 \value{
-a subset of randomly selected rows from data
+a subset of randomly selected rows from \code{data}
 }
 \description{
 Sample rows by either specifying the number of desired rows as an integer
@@ -22,5 +22,8 @@ Sample rows by either specifying the number of desired rows as an integer
 sample_df(mtcars, n = 10)
 sample_df(mtcars, n = 0.1)
 
+}
+\seealso{
+\code{\link[dplyr]{sample_n}}, \code{\link[dplyr]{sample_frac}}.
 }
 

@@ -2,7 +2,7 @@
 #'
 #' @param x a vector
 #'
-#' @return the number of non-NA observations in x as an integer.
+#' @return the number of non-NA observations in \code{x} as an integer.
 #'
 #' @export
 n <- function(x) {
@@ -13,7 +13,7 @@ n <- function(x) {
 #'
 #' @param x a object
 #'
-#' @return the number dimensions in x
+#' @return the number dimensions in \code{x}
 #'
 #' @export
 ndim <- function(x) {
@@ -22,14 +22,16 @@ ndim <- function(x) {
 
 #' Shuffle an object
 #'
-#' @param x Either a vector, list, matrix, or data.frame
+#' @param x Either a vector, list, matrix, or \code{data.frame}
 #'
-#' @return an object with the elements of x ordered in a random permutation
+#' @return an object of the same type as \code{x} with elements ordered in a 
+#' random permutation.
 #'
 #' @examples
-#' shuffle(1:6)
-#' shuffle(letters[1:6])
-#' shuffle(diag(6))
+#' shuffle(1:5)
+#' shuffle(letters[1:5])
+#' shuffle(as.list(letters[1:5]))
+#' shuffle(diag(5))
 #' shuffle(mtcars)
 #'
 #' @rdname shuffle
