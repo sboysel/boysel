@@ -1,12 +1,5 @@
----
-output: github_document
----
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
-
 ## boysel
+
 
 [![Travis](https://img.shields.io/travis/sboysel/boysel.svg?style=flat-square)](https://travis-ci.org/sboysel/boysel)
 [![Codecov](https://img.shields.io/codecov/c/github/sboysel/boysel.svg?style=flat-square)](https://codecov.io/gh/sboysel/boysel)
@@ -17,4 +10,4 @@ A collection of miscellaneous R functions in the spirit of
 
 ### TODO
 
-- Finish tests	[ ]
+- [ ] Finish tests
