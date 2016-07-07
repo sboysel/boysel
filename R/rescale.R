@@ -15,23 +15,27 @@
 #'
 #' @details
 #' Supported rescaling methods:
-#' \itemize{
-#'   \item 'standardize': scale(x, ...)
-#'   \item 'unit.range': (x - min(x, ...)) / (max(x, ...) - min(x, ...))
-#'   \item 'unit.length' x / sqrt(sum(x^2, ...))
+#' \describe{
+#'   \item{standardize}{scale(x, ...)}
+#'   \item{unit.range}{(x - min(x, ...)) / (max(x, ...) - min(x, ...))}
+#'   \item{unit.length}{x / norm(x, type = "2")}
 #' }
 #'
 #' @examples
 #' test <- c(NA, 1, 2, 3)
+#' rescale(test)
+#' rescale(test, "unit.range", na.rm = TRUE)
+#' test <- test[!is.na(test)]
+#' rescale(test, "unit.length")
 #' \dontrun{ 
 #' # Will fail for undefined rescale method
 #' rescale(test, "foo")
 #' # Will fail on non-numeric vectors
 #' rescale(letters)
-#' }
-#' rescale(test)
-#' rescale(test, "unit.range", na.rm = TRUE)
+#' # 'unit.length' will fail with NA
 #' rescale(test, "unit.length", na.rm = TRUE)
+#' }
+#'  
 #'
 #' @export
 rescale <- function(x, method = "standardize", ...) {

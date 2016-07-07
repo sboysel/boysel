@@ -13,7 +13,11 @@ rescale(x, method = "standardize", ...)
 supported options include 'standardize', 'unit.range', and 'unit.length'.}
 
 \item{...}{additional parameters passed to specific rescaling functions 
-(e.g. \code{na.rm}).}
+(e.g. \code{na.rm}).  Note that if \code{x} contains \code{NA}s, 
+\code{rescale(x, method = "standardize", na.rm = TRUE)} and \code{rescale(x, 
+method = "unit.range")} will not drop \code{NA}s in the resulting scaled 
+vector while \code{rescale(x, method = "standardize")} will stop with an
+error.}
 }
 \value{
 a numeric vector of equal length as x, rescaled according to the 
@@ -24,23 +28,27 @@ Rescale a numeric vector
 }
 \details{
 Supported rescaling methods:
-\itemize{
-  \item 'standardize': scale(x, ...)
-  \item 'unit.range': (x - min(x, ...)) / (max(x, ...) - min(x, ...))
-  \item 'unit.length' x / sqrt(sum(x^2, ...))
+\describe{
+  \item{standardize}{scale(x, ...)}
+  \item{unit.range}{(x - min(x, ...)) / (max(x, ...) - min(x, ...))}
+  \item{unit.length}{x / norm(x, type = "2")}
 }
 }
 \examples{
 test <- c(NA, 1, 2, 3)
+rescale(test)
+rescale(test, "unit.range", na.rm = TRUE)
+test <- test[!is.na(test)]
+rescale(test, "unit.length")
 \dontrun{ 
 # Will fail for undefined rescale method
 rescale(test, "foo")
 # Will fail on non-numeric vectors
 rescale(letters)
-}
-rescale(test)
-rescale(test, "unit.range", na.rm = TRUE)
+# 'unit.length' will fail with NA
 rescale(test, "unit.length", na.rm = TRUE)
+}
+ 
 
 }
 
