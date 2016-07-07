@@ -44,7 +44,7 @@ chomp <- function(x) gsub("\\n+$", "", x)
 #' \url{http://stackoverflow.com/a/2352006/3277821}
 #' @export
 text_wrap <- function(x, n = 20L) {
-  stopifnot(is.character(x), is.numeric(n), length(n) == 1)
+  stopifnot(is.character(x), is.numeric(n), length(n) == 1, n >= 1)
   if (!is.integer(n)) {
     n <- as.integer(n)
   }
