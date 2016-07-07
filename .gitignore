@@ -4,3 +4,4 @@ packrat/
 .Rproj.user
 packrat/lib*/
 *.Rproj
+*.swp
