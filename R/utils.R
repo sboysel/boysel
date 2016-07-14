@@ -70,3 +70,24 @@ shuffle.matrix <- function(x) {
 clear <- function() {
   rm(list = ls())
 }
+
+#' Print the contents of a file
+#'
+#' Wraps \code{\link{cat}} to simple print the contents of a file as output.
+#'
+#' @param f a filename passed to \code{\link{readLines}}.
+#' @return The contents of \code{f} are displayed as output.
+#'
+#' @examples
+#' \dontrun{
+#' writeLines(text = c("a", "b", "c"), con = "foo")
+#' catf("foo")
+#' }
+#'
+#' @references Attributed to Yihui Xie via StackOverflow:
+#' \url{http://stackoverflow.com/a/29264573/3277821} 
+#' @export
+catf <- function(f) {
+  cat(readLines(con = f), sep = "\n")
+}
+
