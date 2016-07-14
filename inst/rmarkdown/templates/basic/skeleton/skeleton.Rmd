@@ -1,0 +1,53 @@
+---
+title: "Untitled"
+date: '`r Sys.Date()`'
+output:
+  html_document:
+    toc: yes
+    toc_depth: 3
+  md_document:
+    toc: yes
+    toc_depth: 3
+    variant: markdown_github
+  pdf_document:
+    toc: yes
+    toc_depth: 3
+    citation_package: natbib
+linkcolor: blue
+geometry: margin=1in
+citecolor: blue
+urlcolor: cyan
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE,
+                      cache = TRUE,
+                      comment = "#>",
+                      fig.align = "center")
+```
+
+# Introduction
+
+We can use anchors to [Section 1](#section-1) and [Section 2](#section-2).
+
+# Section 1 {#section-1}
+
+Here is some math, $\overline{x} \equiv \sum_{i = 1}^{N}x_{i}$, inline.  Here is an equation
+
+$$\mathbb{E}[X] \equiv \int_{x \in X} xf(x)dx$$
+
+We can do footnotes^[This is a sample footnote.].
+
+# Section 2 {#section-2}
+
+Of course we can plot figures.
+
+```{r, echo=FALSE, fig.cap="Distribution of carat values in `ggplot2::diamonds`"}
+library(ggplot2)
+ggplot(data = diamonds, aes(x = carat)) +
+  geom_histogram(color = "white", fill = "cornflowerblue", bins = 25)
+```
+
+
