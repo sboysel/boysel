@@ -20,12 +20,15 @@ urlcolor: cyan
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,
-                      message = FALSE,
-                      warning = FALSE,
-                      cache = TRUE,
-                      comment = "#>",
-                      fig.align = "center")
+library(knitr)
+output <- opts_knit$get("rmarkdown.pandoc.to")
+opts_chunk$set(echo = TRUE,
+               message = FALSE,
+               warning = FALSE,
+               cache = TRUE,
+               comment = "#>",
+               fig.align = "center")
+if (output == "pdf") opts_chunk$set(dev = "cairo_pdf")
 ```
 
 # Introduction
