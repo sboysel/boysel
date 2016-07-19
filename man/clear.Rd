@@ -2,12 +2,17 @@
 % Please edit documentation in R/utils.R
 \name{clear}
 \alias{clear}
-\title{Remove all objects in the current environment}
+\title{Remove all objects in an environment}
 \usage{
-clear()
+clear(envir = globalenv())
+}
+\arguments{
+\item{envir}{an environment from which all objects will be removed.  Default
+is \code{.GlobalEnv} (i.e. ''the user's workspace'').}
 }
 \description{
-An alias for \code{rm(list = ls())}.  Use with care.
+An alias for \code{rm(list = ls())} for a specified environment. Use with 
+care.
 }
 \examples{
 x <- 1

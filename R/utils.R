@@ -54,9 +54,13 @@ shuffle.matrix <- function(x) {
   x[sample(1:nrow(x)), ]
 }
 
-#' Remove all objects in the current environment
+#' Remove all objects in an environment
 #'
-#' An alias for \code{rm(list = ls())}.  Use with care.
+#' An alias for \code{rm(list = ls())} for a specified environment. Use with 
+#' care.
+#'
+#' @param envir an environment from which all objects will be removed.  Default
+#' is \code{.GlobalEnv} (i.e. ''the user's workspace'').
 #'
 #' @examples
 #' x <- 1
@@ -67,8 +71,9 @@ shuffle.matrix <- function(x) {
 #' ls()
 #'
 #' @export
-clear <- function() {
-  rm(list = ls())
+clear <- function(envir = globalenv()) {
+  message(paste("Removing all objects from", environmentName(envir)))
+  rm(list = ls(envir = envir), envir = envir)
 }
 
 #' Print the contents of a file
