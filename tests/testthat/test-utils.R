@@ -29,9 +29,10 @@ test_that("things get shuffled", {
 
 test_that("clearing the workspace functions properly", {
   e <- new.env()
-  assign("x", "foo", envir = e)
+  # assign("x", "foo", envir = e)
+  e$x <- "foo"
   expect_true("x" %in% ls(envir = e))
-  clear(envir = e)
+  expect_message(clear(envir = e))
   expect_false("x" %in% ls(envir = e))
 })
 

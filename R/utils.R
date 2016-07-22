@@ -61,7 +61,13 @@ shuffle.matrix <- function(x) {
 #'
 #' @export
 clear <- function(envir = globalenv()) {
-  message(paste("Removing all objects from", environmentName(envir)))
+  stopifnot(is.environment(envir))
+  if (identical(environmentName(envir), "")) {
+    n <- paste(deparse(substitute(e)), "(not named)")
+  } else {
+    n <- environmentName(envir)
+  }
+  message(paste("Removing all objects from", n))
   rm(list = ls(envir = envir), envir = envir)
 }
 
