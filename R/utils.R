@@ -82,6 +82,6 @@ clear <- function(envir = globalenv()) {
 #' \url{http://stackoverflow.com/a/29264573/3277821} 
 #' @export
 catf <- function(f) {
-  cat(readLines(con = f), sep = "\n")
+  cat(readLines(con = f, warn = FALSE), sep = "\n")
 }
 
