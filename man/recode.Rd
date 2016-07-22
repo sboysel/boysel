@@ -23,7 +23,8 @@ mapped).  If NULL (default), elements of \code{x} without a mapping in
 \code{...} or \code{.na} remain the same (i.e. no recoding).}
 
 \item{.na}{a vector.  All values in \code{.na} will be assigned \code{NA}.
-Default is that any \code{NA} values in \code{x} remain \code{NA}.}
+Default is that any \code{NA} values in \code{x} remain \code{NA}.  If NULL,
+no values are assigned \code{NA} values.}
 
 \item{factor}{If TRUE, returned the recoded version of \code{x} as a factor.
 Defaults to FALSE, in which all non-NA elements are forced to character.}
