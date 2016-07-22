@@ -38,11 +38,11 @@
 #'  
 #'
 #' @export
-rescale <- function(x, method = "standardize", ...) {
+rescale <- function(x,
+                    method = c("standardize", "unit.range", "unit.length"),
+                    ...) {
   stopifnot(is.numeric(x))
-  if (! method %in% c("standardize", "unit.range", "unit.length")) {
-    stop("method must be one of 'standardize', 'unit.range', and 'unit.length'.")
-  }
+  method <- match.arg(method)
   if (method == "unit.length" & NA %in% x) {
     stop("Cannot rescale x to unit length with NA values")
   }

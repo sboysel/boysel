@@ -4,7 +4,7 @@
 \alias{rescale}
 \title{Rescale a numeric vector}
 \usage{
-rescale(x, method = "standardize", ...)
+rescale(x, method = c("standardize", "unit.range", "unit.length"), ...)
 }
 \arguments{
 \item{x}{a numeric vector}
