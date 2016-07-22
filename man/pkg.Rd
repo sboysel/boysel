@@ -12,13 +12,17 @@ loaded_pkgs()
 
 is_installed(pkg)
 
-lib(pkg)
+lib(pkg, ...)
 
 in_cran(pkg)
 }
 \arguments{
 \item{pkg}{a package name either as a string or as a bare (i.e. unquoted) 
 name.}
+
+\item{...}{additional arguments passed to either \code{\link{install.packages}}
+or \code{\link{library}}.  Properly named arguments will be passed to the
+appropriate function.}
 }
 \description{
 Several convenience functions when working with loading, installing, or
