@@ -9,17 +9,6 @@ n <- function(x) {
   length(x[!is.na(x)])
 }
 
-#' Count the number of dimensions in an object
-#'
-#' @param x a object
-#'
-#' @return the number dimensions in \code{x}
-#'
-#' @export
-ndim <- function(x) {
-  length(dim(x))
-}
-
 #' Shuffle an object
 #'
 #' @param x Either a vector, list, matrix, or \code{data.frame}
