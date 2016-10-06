@@ -1,0 +1,88 @@
+---
+title: "Untitled"
+author: Jane Doe
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+fontsize: 12pt
+geometry: margin=1in
+colorlinks: true
+linkcolor: blue
+urlcolor: blue
+citecolor: blue
+toccolor: blue
+bibliography: references.bib
+link-citations: true
+header-includes:
+  - \usepackage{amsmath}
+  - \usepackage{amsfonts}
+output:
+  pdf_document:
+    fig_caption: true
+    fig_height: 6
+    fig_width: 6
+    highlight: pygments
+    toc: true
+    toc_depth: 3
+  html_document:
+    fig_caption: true
+    fig_height: 6
+    fig_width: 6
+    highlight: pygments
+    toc: true
+    toc_depth: 3
+  md_document:
+    variant: markdown_github
+    fig_height: 6
+    fig_width: 6
+    toc: yes
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(comment = "#>")
+```
+
+
+# First
+
+## Footnotes and Citations
+
+| Markdown              | Output               |
+|:----------------------|:---------------------|
+|`@heckman1979sample`   | @heckman1979sample   |
+|`[@heckman1979sample]` | [@heckman1979sample] |
+|`...foo^[A footnote.].`| ...foo^[A footnote.].|
+
+Table: Footnotes and Citations
+
+## Mathematical Equations
+
+For $S_{n} = \sum_{k = 0}^{n}r^{k}$ and $r < \lvert 1 \rvert$, $S_{\infty} = \sum_{k = 0}^{\infty}r^{k} = \frac{1}{1 - r}$.  For $X \sim f(X = x)$,
+
+\[\mathbb{E}[X] \equiv \int_{x \in X} xf(x)dx\]
+
+## `R` Code Chunks
+
+```{r}
+library(ggplot2)
+ggplot(data = diamonds, aes(x = carat, y = price, colour = cut)) +
+  geom_point()
+```
+
+## Code Chunks with other engines
+
+### Python
+
+```{python}
+s = 'hello, world!'
+print(s)
+```
+
+### Bash
+
+```{bash}
+fortune | cowsay
+```
+
+# References
+
