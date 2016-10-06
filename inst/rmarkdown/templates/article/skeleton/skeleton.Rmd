@@ -2,6 +2,8 @@
 title: "Untitled"
 author: Jane Doe
 date: '`r format(Sys.time(), "%d %B, %Y")`'
+abstract: >
+  An abstract will go here.
 fontsize: 12pt
 geometry: margin=1in
 colorlinks: true
