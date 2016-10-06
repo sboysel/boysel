@@ -11,6 +11,7 @@ Description: Contains some handy utility functions I use day to day.
 License: GPL-3
 LazyData: TRUE
 Imports:
-  rstudioapi (>= 0.5)
+  rstudioapi (>= 0.5),
+  rmarkdown
 RoxygenNote: 5.0.1
 Suggests: testthat
