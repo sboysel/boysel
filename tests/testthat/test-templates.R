@@ -22,9 +22,15 @@ test_format <- function(name, file_check = TRUE, os_skip = NULL) {
                      edit = FALSE)
     
     # render it
-    capture.output({
+    utils::capture.output({
       if (file_check) {
         output_file <- tempfile(fileext = ".pdf")
+        rmarkdown::render(testdoc, output_file = output_file)
+        expect_true(file.exists(output_file))
+        output_file <- tempfile(fileext = ".html")
+        rmarkdown::render(testdoc, output_file = output_file)
+        expect_true(file.exists(output_file))
+        output_file <- tempfile(fileext = ".md")
         rmarkdown::render(testdoc, output_file = output_file)
         expect_true(file.exists(output_file))
       } else {
