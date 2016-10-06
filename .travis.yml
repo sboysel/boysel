@@ -1,8 +1,23 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: R
+r:
+  - oldrel
+  - release
+  - devel
 sudo: false
 cache: packages
+
+addons:
+  apt:
+    packages:
+      - fortune-mod
+      - cowsay
+      - python3
+
+r_packages:
+  - ggplot2
+  - rmarkdown
 
 r_github_packages:
   - jimhester/covr
