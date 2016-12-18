@@ -1,26 +1,3 @@
-#' Coefficient of Variation
-#'
-#' Calculate the coefficient of variation (i.e. variation coefficient) for
-#' a vector.
-#'
-#' @param x a numeric vector
-#' @param na.rm Passed directly to \code{sd()} and \code{mean()}.
-#' @return a scalar equal to \eqn{\frac{s_{x}}{\overline{x}}}.
-#'
-#' @examples
-#' x <- 1:5
-#' y <- c(x^2, NA)
-#' cv(x) > cv(y, na.rm = TRUE)
-#'
-#' @references  Weisstein, Eric W. "Variation Coefficient." From MathWorld--A
-#' Wolfram Web Resource.
-#' \url{http://mathworld.wolfram.com/VariationCoefficient.html}
-#' @export
-cv <- function(x, na.rm = FALSE) {
-  stats::sd(x, na.rm = na.rm) / mean(x, na.rm = na.rm)
-}
-
-
 #' Simple summary statistics
 #'
 #' Generate a simple set of summary statistics for the numeric columns of a

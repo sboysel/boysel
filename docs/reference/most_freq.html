@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference. boysel</title>
+<title>most_freq. boysel</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -71,54 +71,60 @@
       </header>
 
       <div class="page-header">
-  <h1>Function reference <small>version&nbsp;0.1.0</small></h1>
+  <h1>Statistical Mode</h1>
 </div>
 
 <div class="row">
   <div class="col-md-9">
-    <div class="section ">
-      <h2>All functions</h2>
-      <p class="section-desc"></p>
+    
+    <p>Calculate most frequently occuring value in a vector.</p>
+    
 
-      <dl class="dl-horizontal">
-        <dt><a href="as_numeric.html">as_numeric</a></dt><dt><a href="as_numeric.html">as_numeric.default</a></dt><dt><a href="as_numeric.html">as_numeric.factor</a></dt>
-        <dd>Converting factors to numeric</dd>
-        <dt><a href="catf.html">catf</a></dt>
-        <dd>Print the contents of a file</dd>
-        <dt><a href="chomp.html">chomp</a></dt>
-        <dd>Remove trailing newline delimeters from a character vector</dd>
-        <dt><a href="clear.html">clear</a></dt>
-        <dd>Remove all objects in an environment</dd>
-        <dt><a href="cv.html">cv</a></dt>
-        <dd>Coefficient of Variation</dd>
-        <dt><a href="is_char_numeric.html">is_char_numeric</a></dt>
-        <dd>Logical operators</dd>
-        <dt><a href="most_freq.html">most_freq</a></dt><dt><a href="most_freq.html">most_freq.character</a></dt><dt><a href="most_freq.html">most_freq.factor</a></dt><dt><a href="most_freq.html">most_freq.numeric</a></dt>
-        <dd>Statistical Mode</dd>
-        <dt><a href="n.html">n</a></dt>
-        <dd>Count the number of non-NA observations in a vector</dd>
-        <dt><a href="pkg.html">in_cran</a></dt><dt><a href="pkg.html">is_installed</a></dt><dt><a href="pkg.html">lib</a></dt><dt><a href="pkg.html">loaded_pkgs</a></dt><dt><a href="pkg.html">pkg</a></dt>
-        <dd>Package utility functions</dd>
-        <dt><a href="read_text.html">read_text</a></dt>
-        <dd>Data I/O convenience functions</dd>
-        <dt><a href="recode.html">binary_recode</a></dt><dt><a href="recode.html">recode</a></dt>
-        <dd>Flexible vector recoding</dd>
-        <dt><a href="rescale.html">rescale</a></dt>
-        <dd>Rescale a numeric vector</dd>
-        <dt><a href="reshape_stata.html">long_to_wide</a></dt><dt><a href="reshape_stata.html">reshape_stata</a></dt><dt><a href="reshape_stata.html">wide_to_long</a></dt>
-        <dd>Reshape the Stata way</dd>
-        <dt><a href="sample_df.html">sample_df</a></dt>
-        <dd>Randomly sample a data.frame</dd>
-        <dt><a href="shuffle.html">shuffle</a></dt>
-        <dd>Shuffle an object</dd>
-        <dt><a href="sumstats.html">sumstats</a></dt>
-        <dd>Simple summary statistics</dd>
-        <dt><a href="text_wrap.html">text_wrap</a></dt>
-        <dd>Wrap a string using newline delimeters</dd>
-        <dt><a href="trim.html">trim</a></dt>
-        <dd>Remove trailing and leading spaces from a character vector</dd>
-      </dl>
+    <pre><span class='fu'>most_freq</span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='co'># S3 method for numeric</span>
+<span class='fu'>most_freq</span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='co'># S3 method for character</span>
+<span class='fu'>most_freq</span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+<span class='co'># S3 method for factor</span>
+<span class='fu'>most_freq</span>(<span class='no'>x</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    
+    <h2>Arguments</h2>
+    <dl class="dl-horizontal">
+      <dt>x</dt>
+      <dd>a vector</dd>
+      <dt>na.rm</dt>
+      <dd>logical If TRUE, all NA values will be dropped.</dd>
+    </dl>
+    
+    <div class="Value">
+      <h2>Value</h2>
+
+      <p>a scalar equal to the modal value of <code>x</code>.</p>
     </div>
+
+    <div class="References">
+      <h2>References</h2>
+
+      <p><a href = 'http://mathworld.wolfram.com/Mode.html'>http://mathworld.wolfram.com/Mode.html</a></p>
+    </div>
+    
+    <h2 id="examples">Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>, <span class='fl'>4</span>, <span class='fl'>5</span>, <span class='fl'>0</span>)
+<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='st'>"foo"</span>, <span class='st'>"bar"</span>, <span class='st'>"baz"</span>, <span class='st'>"foo"</span>)
+<span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'>factor</span>(<span class='no'>y</span>)
+<span class='fu'>most_freq</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] 0
+#&gt; </div><div class='input'><span class='fu'>most_freq</span>(<span class='no'>y</span>)</div><div class='output co'>#&gt; [1] &quot;foo&quot;
+#&gt; </div><div class='input'><span class='fu'>most_freq</span>(<span class='no'>z</span>)</div><div class='output co'>#&gt; [1] foo
+#&gt; Levels: foo
+#&gt; </div><div class='input'><span class='no'>xx</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='no'>x</span>)
+<span class='fu'>most_freq</span>(<span class='no'>xx</span>)</div><div class='output co'>#&gt; [1] 0 1
+#&gt; </div><div class='input'>
+</div></pre>
+  </div>
+  <div class="col-md-3">
   </div>
 </div>
 
