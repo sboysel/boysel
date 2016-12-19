@@ -42,3 +42,15 @@ test_that("catf() spits out files", {
   expect_output_file(catf(tmp), file = tmp)
   unlink(tmp)
 })
+
+test_that("matches() grabs matching elements from character vectors", {
+  xx <- c("foo", "foo", "bar", "baz")
+  y <- matches(xx, "foo")
+  z <- xx[grepl("foo", xx)]
+  yy <- matches(xx, "(foo|bar)")
+  zz <- matches(xx, c("foo", "bar"))
+  expect_equal(y, z)
+  expect_equal(matches(xx), xx)
+  expect_silent(matches(xx, c("foo", "bar")))
+  expect_equal(yy, zz)
+})

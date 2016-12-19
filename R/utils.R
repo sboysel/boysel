@@ -91,3 +91,28 @@ catf <- function(f) {
   cat(readLines(con = f, warn = FALSE), sep = "\n")
 }
 
+#' Return matching elements in a vector
+#' 
+#' @param x a character vector with elements to be matched
+#' @param pattern a regular expression.  If \code{length(pattern) > 1}, each element 
+#' is concatenated and a search using \href{https://en.wikipedia.org/wiki/Regular_expression#Basic_concepts}{alternation}.
+#' @return a character vector with the elements of \code{x} that match \code{pattern}
+#' 
+#' @examples 
+#' xx <- c("foo", "bar", "baz")
+#' matches(x = xx)
+#' matches(x = xx, pattern = "foo")
+#' matches(x = xx, pattern = "(foo|bar)")
+#' # should be equivalent to
+#' matches(x = xx, pattern = c("foo", "bar"))
+#' matches(x = xx, pattern = "^b.*")
+#' 
+#' @export
+matches <- function(x, pattern = ".", ...) {
+  stopifnot(is.character(x), is.character(pattern))
+  if (length(pattern) > 1) {
+    pattern <- paste0("(", paste0(pattern, collapse = "|"), ")")
+  }
+  x[grepl(pattern = pattern, x = x, ...)]
+}
+
