@@ -6,11 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference. boysel</title>
+<title>Function reference • boysel</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
-
 <!-- Bootstrap -->
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -22,6 +21,7 @@
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
+<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
@@ -34,10 +34,9 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container template-reference-index">
       <header>
-      
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -50,12 +49,10 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">Home</a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/sboysel/boysel">
@@ -67,63 +64,142 @@
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
       
       </header>
 
-      <div class="page-header">
-  <h1>Function reference <small>version&nbsp;0.1.0</small></h1>
-</div>
-
-<div class="row">
+      <div class="row">
   <div class="col-md-9">
-    <div class="section ">
-      <h2>All functions</h2>
+    <div class="page-header">
+      <h1>Function reference</h1>
+      <h4>version&nbsp;0.1.0</h4>
+    </div>
+
+    <div class="contents">
+      <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
       <p class="section-desc"></p>
 
-      <dl class="dl-horizontal">
-        <dt><a href="as_numeric.html">as_numeric</a></dt><dt><a href="as_numeric.html">as_numeric.default</a></dt><dt><a href="as_numeric.html">as_numeric.factor</a></dt>
-        <dd>Converting factors to numeric</dd>
-        <dt><a href="catf.html">catf</a></dt>
-        <dd>Print the contents of a file</dd>
-        <dt><a href="chomp.html">chomp</a></dt>
-        <dd>Remove trailing newline delimeters from a character vector</dd>
-        <dt><a href="clear.html">clear</a></dt>
-        <dd>Remove all objects in an environment</dd>
-        <dt><a href="cv.html">cv</a></dt>
-        <dd>Coefficient of Variation</dd>
-        <dt><a href="is_char_numeric.html">is_char_numeric</a></dt>
-        <dd>Logical operators</dd>
-        <dt><a href="most_freq.html">most_freq</a></dt><dt><a href="most_freq.html">most_freq.character</a></dt><dt><a href="most_freq.html">most_freq.factor</a></dt><dt><a href="most_freq.html">most_freq.numeric</a></dt>
-        <dd>Statistical Mode</dd>
-        <dt><a href="n.html">n</a></dt>
-        <dd>Count the number of non-NA observations in a vector</dd>
-        <dt><a href="pkg.html">in_cran</a></dt><dt><a href="pkg.html">is_installed</a></dt><dt><a href="pkg.html">lib</a></dt><dt><a href="pkg.html">loaded_pkgs</a></dt><dt><a href="pkg.html">pkg</a></dt>
-        <dd>Package utility functions</dd>
-        <dt><a href="read_text.html">read_text</a></dt>
-        <dd>Data I/O convenience functions</dd>
-        <dt><a href="recode.html">binary_recode</a></dt><dt><a href="recode.html">recode</a></dt>
-        <dd>Flexible vector recoding</dd>
-        <dt><a href="rescale.html">rescale</a></dt>
-        <dd>Rescale a numeric vector</dd>
-        <dt><a href="reshape_stata.html">long_to_wide</a></dt><dt><a href="reshape_stata.html">reshape_stata</a></dt><dt><a href="reshape_stata.html">wide_to_long</a></dt>
-        <dd>Reshape the Stata way</dd>
-        <dt><a href="sample_df.html">sample_df</a></dt>
-        <dd>Randomly sample a data.frame</dd>
-        <dt><a href="shuffle.html">shuffle</a></dt>
-        <dd>Shuffle an object</dd>
-        <dt><a href="sumstats.html">sumstats</a></dt>
-        <dd>Simple summary statistics</dd>
-        <dt><a href="text_wrap.html">text_wrap</a></dt>
-        <dd>Wrap a string using newline delimeters</dd>
-        <dt><a href="trim.html">trim</a></dt>
-        <dd>Remove trailing and leading spaces from a character vector</dd>
-      </dl>
+      
+      <p><a href="as_numeric.html">Converting factors to numeric</a></p>
+      <ul>
+        <li><code><a href="as_numeric.html">as_numeric</a></code></li><li><code><a href="as_numeric.html">as_numeric.default</a></code></li><li><code><a href="as_numeric.html">as_numeric.factor</a></code></li>
+      </ul>
+      
+      <p><a href="catf.html">Print the contents of a file</a></p>
+      <ul>
+        <li><code><a href="catf.html">catf</a></code></li>
+      </ul>
+      
+      <p><a href="chomp.html">Remove trailing newline delimeters from a character vector</a></p>
+      <ul>
+        <li><code><a href="chomp.html">chomp</a></code></li>
+      </ul>
+      
+      <p><a href="clear.html">Remove all objects in an environment</a></p>
+      <ul>
+        <li><code><a href="clear.html">clear</a></code></li>
+      </ul>
+      
+      <p><a href="cv.html">Coefficient of Variation</a></p>
+      <ul>
+        <li><code><a href="cv.html">cv</a></code></li>
+      </ul>
+      
+      <p><a href="group_demean.html">Subtract mean values by grouping factor</a></p>
+      <ul>
+        <li><code><a href="group_demean.html">group_demean</a></code></li><li><code><a href="group_demean.html">group_demean.formula</a></code></li><li><code><a href="group_demean.html">group_demean.numeric</a></code></li>
+      </ul>
+      
+      <p><a href="logical.html">Logical operators</a></p>
+      <ul>
+        <li><code><a href="logical.html">is_char_numeric</a></code></li><li><code><a href="logical.html">is_formula</a></code></li><li><code><a href="logical.html">logical</a></code></li>
+      </ul>
+      
+      <p><a href="matches.html">Return matching elements in a vector</a></p>
+      <ul>
+        <li><code><a href="matches.html">matches</a></code></li>
+      </ul>
+      
+      <p><a href="most_freq.html">Statistical Mode</a></p>
+      <ul>
+        <li><code><a href="most_freq.html">most_freq</a></code></li><li><code><a href="most_freq.html">most_freq.character</a></code></li><li><code><a href="most_freq.html">most_freq.factor</a></code></li><li><code><a href="most_freq.html">most_freq.numeric</a></code></li>
+      </ul>
+      
+      <p><a href="n.html">Count the number of non-NA observations in a vector</a></p>
+      <ul>
+        <li><code><a href="n.html">n</a></code></li>
+      </ul>
+      
+      <p><a href="pkg.html">Package utility functions</a></p>
+      <ul>
+        <li><code><a href="pkg.html">in_cran</a></code></li><li><code><a href="pkg.html">is_installed</a></code></li><li><code><a href="pkg.html">lib</a></code></li><li><code><a href="pkg.html">loaded_pkgs</a></code></li><li><code><a href="pkg.html">pkg</a></code></li>
+      </ul>
+      
+      <p><a href="read_text.html">Data I/O convenience functions</a></p>
+      <ul>
+        <li><code><a href="read_text.html">read_text</a></code></li>
+      </ul>
+      
+      <p><a href="recode.html">Flexible vector recoding</a></p>
+      <ul>
+        <li><code><a href="recode.html">binary_recode</a></code></li><li><code><a href="recode.html">recode</a></code></li>
+      </ul>
+      
+      <p><a href="rescale.html">Rescale a numeric vector</a></p>
+      <ul>
+        <li><code><a href="rescale.html">rescale</a></code></li>
+      </ul>
+      
+      <p><a href="reshape_stata.html">Reshape the Stata way</a></p>
+      <ul>
+        <li><code><a href="reshape_stata.html">long_to_wide</a></code></li><li><code><a href="reshape_stata.html">reshape_stata</a></code></li><li><code><a href="reshape_stata.html">wide_to_long</a></code></li>
+      </ul>
+      
+      <p><a href="sample_df.html">Randomly sample a data.frame</a></p>
+      <ul>
+        <li><code><a href="sample_df.html">sample_df</a></code></li>
+      </ul>
+      
+      <p><a href="shuffle.html">Shuffle an object</a></p>
+      <ul>
+        <li><code><a href="shuffle.html">shuffle</a></code></li>
+      </ul>
+      
+      <p><a href="sumstats.html">Simple summary statistics</a></p>
+      <ul>
+        <li><code><a href="sumstats.html">sumstats</a></code></li><li><code><a href="sumstats.html">sumstats.data.frame</a></code></li><li><code><a href="sumstats.html">sumstats.numeric</a></code></li>
+      </ul>
+      
+      <p><a href="text_wrap.html">Wrap a string using newline delimeters</a></p>
+      <ul>
+        <li><code><a href="text_wrap.html">text_wrap</a></code></li>
+      </ul>
+      
+      <p><a href="trim.html">Remove trailing and leading spaces from a character vector</a></p>
+      <ul>
+        <li><code><a href="trim.html">trim</a></code></li>
+      </ul>
+    
     </div>
+  </div>
+
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#section-all-functions">All functions</a></li>
+    </ul>
   </div>
 </div>
 
       <footer>
-      <p>Built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>. Styled with <a href="http://getbootstrap.com">Bootstrap 3</a>.</p>
+      <div class="copyright">
+  <p>Developed by Sam Boysel.</p>
+</div>
+
+<div class="pkgdown">
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+</div>
+
       </footer>
    </div>
 

@@ -6,11 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>rescale. boysel</title>
+<title>Rescale a numeric vector — rescale • boysel</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
-
 <!-- Bootstrap -->
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -22,6 +21,7 @@
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
+<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
@@ -34,10 +34,9 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container template-reference-topic">
       <header>
-      
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -50,12 +49,10 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">Home</a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/sboysel/boysel">
@@ -67,22 +64,23 @@
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
       
       </header>
 
-      <div class="page-header">
-  <h1>Rescale a numeric vector</h1>
-</div>
+      <div class="row">
+  <div class="col-md-9 contents">
+    <div class="page-header">
+    <h1>Rescale a numeric vector</h1>
+    </div>
 
-<div class="row">
-  <div class="col-md-9">
     
     <p>Rescale a numeric vector</p>
     
 
     <pre><span class='fu'>rescale</span>(<span class='no'>x</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"standardize"</span>, <span class='st'>"unit.range"</span>, <span class='st'>"unit.length"</span>), <span class='no'>...</span>)</pre>
     
-    <h2>Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
       <dt>x</dt>
       <dd>a numeric vector</dd>
@@ -98,25 +96,22 @@ vector while <code>rescale(x, method = &quot;standardize&quot;)</code> will stop
 error.</dd>
     </dl>
     
-    <div class="Value">
-      <h2>Value</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-      <p>a numeric vector of equal length as x, rescaled according to the 
+    <p>a numeric vector of equal length as x, rescaled according to the 
 procedure chosen in &#39;type&#39;.</p>
-    </div>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <div class="Details">
-      <h2>Details</h2>
-
-      <p>Supported rescaling methods:
+    <p>Supported rescaling methods:
 <dl class='dl-horizontal'>
   <dt>standardize</dt><dd>scale(x, ...)</dd>
   <dt>unit.range</dt><dd>(x - min(x, ...)) / (max(x, ...) - min(x, ...))</dd>
   <dt>unit.length</dt><dd>x / norm(x, type = &quot;2&quot;)</dd>
 </dl></p>
-    </div>
     
-    <h2 id="examples">Examples</h2>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>test</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='fl'>NA</span>, <span class='fl'>1</span>, <span class='fl'>2</span>, <span class='fl'>3</span>)
 <span class='fu'>rescale</span>(<span class='no'>test</span>)</div><div class='output co'>#&gt;      [,1]
 #&gt; [1,]   NA
@@ -126,11 +121,8 @@ procedure chosen in &#39;type&#39;.</p>
 #&gt; attr(,&quot;scaled:center&quot;)
 #&gt; [1] 2
 #&gt; attr(,&quot;scaled:scale&quot;)
-#&gt; [1] 1
-#&gt; </div><div class='input'><span class='fu'>rescale</span>(<span class='no'>test</span>, <span class='st'>"unit.range"</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1]  NA 0.0 0.5 1.0
-#&gt; </div><div class='input'><span class='no'>test</span> <span class='kw'>&lt;-</span> <span class='no'>test</span>[!<span class='fu'>is.na</span>(<span class='no'>test</span>)]
-<span class='fu'>rescale</span>(<span class='no'>test</span>, <span class='st'>"unit.length"</span>)</div><div class='output co'>#&gt; [1] 0.2672612 0.5345225 0.8017837
-#&gt; </div><div class='input'><span class='co'>## Not run: ------------------------------------</span>
+#&gt; [1] 1</div><div class='input'><span class='fu'>rescale</span>(<span class='no'>test</span>, <span class='st'>"unit.range"</span>, <span class='kw'>na.rm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; [1]  NA 0.0 0.5 1.0</div><div class='input'><span class='no'>test</span> <span class='kw'>&lt;-</span> <span class='no'>test</span>[!<span class='fu'>is.na</span>(<span class='no'>test</span>)]
+<span class='fu'>rescale</span>(<span class='no'>test</span>, <span class='st'>"unit.length"</span>)</div><div class='output co'>#&gt; [1] 0.2672612 0.5345225 0.8017837</div><div class='input'><span class='co'>## Not run: ------------------------------------</span>
 <span class='co'>#  </span>
 <span class='co'># # Will fail for undefined rescale method</span>
 <span class='co'># rescale(test, "foo")</span>
@@ -140,12 +132,30 @@ procedure chosen in &#39;type&#39;.</p>
 <span class='co'># rescale(test, "unit.length", na.rm = TRUE)</span>
 <span class='co'>## ---------------------------------------------</span></div></pre>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
+
   </div>
 </div>
 
       <footer>
-      <p>Built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>. Styled with <a href="http://getbootstrap.com">Bootstrap 3</a>.</p>
+      <div class="copyright">
+  <p>Developed by Sam Boysel.</p>
+</div>
+
+<div class="pkgdown">
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+</div>
+
       </footer>
    </div>
 
