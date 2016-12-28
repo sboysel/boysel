@@ -1,3 +1,9 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
 ## boysel
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
@@ -18,3 +24,4 @@ A collection of miscellaneous R functions in the spirit of
 ### TODO
 
 - [ ] Finish tests
+- [ ] Embed fonts in PDF output for article template
