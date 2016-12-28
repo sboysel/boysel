@@ -1,10 +1,10 @@
 #' Simple summary statistics
 #'
-#' Generate a simple set of summary statistics for the numeric columns of a
-#' data.frame over various subsets.  There are MANY other ways to do this but
-#' this function is suitable to my needs.
+#' Generate a simple set of summary statistics for a numeric vector or the 
+#' numeric columns of a data.frame over various subsets.  There are MANY other 
+#' ways to do this but this function is suitable to my needs.
 #'
-#' @param data a \code{data.frame}
+#' @param data a \code{data.frame} or numeric vector.
 #' @param f a formula. See the examples and \code{\link[stats]{aggregate}} for 
 #' details.
 #' @param digits an integer to specify the number of decimal places desired for
@@ -15,10 +15,13 @@
 #' permutations of the grouping factors specified in the right-hand side of 
 #' \code{f}.  If FALSE, the rows will be sorted only by permutations of the
 #' grouping factors.
+#' @param ... additional arguments passed onto various methods.
 #' @return a \code{data.frame} in which each row represents a variable-grouping
 #' permutation.
 #'
 #' @examples
+#' # Numeric vector
+#' sumstats(mtcars$disp)
 #' # All variables summarized and no grouping
 #' sumstats(mtcars)
 #' sumstats(iris)
@@ -29,8 +32,23 @@
 #' # 'mpg' and 'wt' summarized by 'cyl' and 'vs'
 #' sumstats(mtcars, cbind(mpg, wt) ~ cyl + vs)
 #' sumstats(mtcars, cbind(mpg, wt) ~ cyl + vs, order = FALSE)
+#' @name sumstats
+
 #' @export
-sumstats <- function(data, f = NULL, digits = 2, order = TRUE) {
+#' @rdname sumstats
+sumstats <- function(data, ...) UseMethod("sumstats")
+
+#' @export
+#' @rdname sumstats
+sumstats.numeric <- function(data, digits = 2, ...) {
+  summ <- t(round(sumstats_row(data), digits = digits))
+  row.names(summ) <- deparse(substitute(data))
+  data.frame(summ)
+}
+
+#' @export
+#' @rdname sumstats
+sumstats.data.frame <- function(data, f = NULL, digits = 2, order = TRUE, ...) {
   if (is.null(f)) {
     data <- data[sapply(data, is.numeric)]
     summ <- sapply(data, function(x) {

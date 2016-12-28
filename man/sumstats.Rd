@@ -2,18 +2,27 @@
 % Please edit documentation in R/sumstats.R
 \name{sumstats}
 \alias{sumstats}
+\alias{sumstats.data.frame}
+\alias{sumstats.numeric}
 \title{Simple summary statistics}
 \usage{
-sumstats(data, f = NULL, digits = 2, order = TRUE)
+sumstats(data, ...)
+
+\method{sumstats}{numeric}(data, digits = 2, ...)
+
+\method{sumstats}{data.frame}(data, f = NULL, digits = 2, order = TRUE,
+  ...)
 }
 \arguments{
-\item{data}{a \code{data.frame}}
+\item{data}{a \code{data.frame} or numeric vector.}
 
-\item{f}{a formula. See the examples and \code{\link[stats]{aggregate}} for 
-details.}
+\item{...}{additional arguments passed onto various methods.}
 
 \item{digits}{an integer to specify the number of decimal places desired for
 the resulting summary statistics.  Passed directly to \code{round()}.}
+
+\item{f}{a formula. See the examples and \code{\link[stats]{aggregate}} for 
+details.}
 
 \item{order}{a logical value.  If TRUE (default), the rows of the resulting
 \code{data.frame} will be first sorted alphabetically by the variables
@@ -27,11 +36,13 @@ a \code{data.frame} in which each row represents a variable-grouping
 permutation.
 }
 \description{
-Generate a simple set of summary statistics for the numeric columns of a
-data.frame over various subsets.  There are MANY other ways to do this but
-this function is suitable to my needs.
+Generate a simple set of summary statistics for a numeric vector or the 
+numeric columns of a data.frame over various subsets.  There are MANY other 
+ways to do this but this function is suitable to my needs.
 }
 \examples{
+# Numeric vector
+sumstats(mtcars$disp)
 # All variables summarized and no grouping
 sumstats(mtcars)
 sumstats(iris)
