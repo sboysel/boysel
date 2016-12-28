@@ -26,7 +26,8 @@ cv <- function(x, na.rm = FALSE) {
 #' 
 #' @param x a vector
 #' @param na.rm logical If TRUE, all NA values will be dropped.
-#' @return a scalar equal to the modal value of \code{x}.
+#' @return a scalar equal to the modal value of \code{x}.  If \code{x} is multimodal, \code{length(x)}
+#' will equal the number of unique modes in \code{x}.
 #' @references \url{http://mathworld.wolfram.com/Mode.html}
 #' 
 #' @examples

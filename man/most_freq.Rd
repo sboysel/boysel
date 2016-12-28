@@ -21,7 +21,8 @@ most_freq(x, na.rm = TRUE)
 \item{na.rm}{logical If TRUE, all NA values will be dropped.}
 }
 \value{
-a scalar equal to the modal value of \code{x}.
+a scalar equal to the modal value of \code{x}.  If \code{x} is multimodal, \code{length(x)}
+will equal the number of unique modes in \code{x}.
 }
 \description{
 Calculate most frequently occuring value in a vector.
