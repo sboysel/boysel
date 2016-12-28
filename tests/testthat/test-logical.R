@@ -6,3 +6,10 @@ test_that("is_char_numeric()", {
   expect_true(is_char_numeric(x))
   expect_false(is_char_numeric(xx))
 })
+
+test_that("is_formula()", {
+  f <- "y ~ x"
+  ff <- stats::as.formula(f)
+  expect_false(is_formula(f))
+  expect_true(is_formula(ff))
+})
