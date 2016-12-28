@@ -96,6 +96,7 @@ catf <- function(f) {
 #' @param x a character vector with elements to be matched
 #' @param pattern a regular expression.  If \code{length(pattern) > 1}, each element 
 #' is concatenated and a search using \href{https://en.wikipedia.org/wiki/Regular_expression#Basic_concepts}{alternation}.
+#' @param ... additional arguments passed to \code{\link{grepl}}.
 #' @return a character vector with the elements of \code{x} that match \code{pattern}
 #' 
 #' @examples 
