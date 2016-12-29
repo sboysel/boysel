@@ -16,3 +16,16 @@ test_that("sumstats works on numeric vectors", {
  expect_true(nrow(ss) == 1)
  expect_is(ss, "data.frame")
 })
+
+test_that("n is converted to an integer column", {
+  ss <- sumstats(mtcars$disp)
+  expect_is(ss$n, "integer")
+})
+
+test_that("sumstats_row takes a numeric vector and returns a numeric vector of length 8", {
+  x <- c(runif(5), NA, NaN, Inf, -Inf)
+  xx <- sumstats_row(x)
+  expect_identical(names(xx), c("n", "mean", "sd", "min", "p25", "p50", "p75", "max"))
+  expect_is(xx, "numeric")
+  expect_true(length(xx) == 8)
+})

@@ -42,8 +42,13 @@ sumstats <- function(data, ...) UseMethod("sumstats")
 #' @rdname sumstats
 sumstats.numeric <- function(data, digits = 2, ...) {
   summ <- t(round(sumstats_row(data), digits = digits))
+  summ <- data.frame(summ)
   row.names(summ) <- deparse(substitute(data))
-  data.frame(summ)
+  
+  # coerce n column to integer
+  summ$n <- as.integer(summ$n)
+  
+  summ
 }
 
 #' @export
@@ -73,6 +78,7 @@ sumstats.data.frame <- function(data, f = NULL, digits = 2, order = TRUE, ...) {
     }
     summ <- data.frame(do.call(rbind, summ))
   }
+
   # Add a variable name column
   summ$variable <- summ.names
   # Place variable and grouping factors first
@@ -82,6 +88,10 @@ sumstats.data.frame <- function(data, f = NULL, digits = 2, order = TRUE, ...) {
     summ <- summ[do.call("order", as.list(summ[c("variable", summ.grps)])), ]
   }
   row.names(summ) <- NULL
+  
+  # coerce n column to integer
+  summ$n <- as.integer(summ$n)
+  
   summ
 }
 
