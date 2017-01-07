@@ -6,11 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>is_char_numeric. boysel</title>
+<title>R Markdown Notes Template (PDF) — notes_pdf • boysel</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
-
 <!-- Bootstrap -->
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -22,6 +21,7 @@
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
+<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
@@ -34,10 +34,9 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container template-reference-topic">
       <header>
-      
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -50,12 +49,10 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">Home</a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/sboysel/boysel">
@@ -67,50 +64,65 @@
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
+
       
       </header>
 
-      <div class="page-header">
-  <h1>Logical operators</h1>
-</div>
+      <div class="row">
+  <div class="col-md-9 contents">
+    <div class="page-header">
+    <h1>R Markdown Notes Template (PDF)</h1>
+    </div>
 
-<div class="row">
-  <div class="col-md-9">
     
-    <p>Test if character vector can be converted to numeric without loss of 
-information.</p>
+    <p>Attribution: <a href = 'https://github.com/rstudio/rticles'>https://github.com/rstudio/rticles</a>.</p>
     
 
-    <pre><span class='fu'>is_char_numeric</span>(<span class='no'>x</span>)</pre>
+    <pre><span class='fu'>notes_pdf</span>(<span class='no'>...</span>, <span class='kw'>keep_tex</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>md_extensions</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"-autolink_bare_uris"</span>,
+  <span class='st'>"+header_attributes"</span>, <span class='st'>"+auto_identifiers"</span>, <span class='st'>"+fenced_code_blocks"</span>,
+  <span class='st'>"+fenced_code_attributes"</span>, <span class='st'>"+fancy_lists"</span>, <span class='st'>"+subscript"</span>, <span class='st'>"+superscript"</span>,
+  <span class='st'>"+raw_tex"</span>, <span class='st'>"+citations"</span>, <span class='st'>"+inline_notes"</span>, <span class='st'>"+footnotes"</span>, <span class='st'>"+table_captions"</span>,
+  <span class='st'>"+pipe_tables"</span>))</pre>
     
-    <h2>Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <dl class="dl-horizontal">
-      <dt>x</dt>
-      <dd>a vector</dd>
+      <dt>...</dt>
+      <dd>Additional arguments to <code>rmarkdown::pdf_document</code></dd>
+      <dt>keep_tex</dt>
+      <dd>Keep the intermediate tex file used in the conversion to PDF</dd>
+      <dt>md_extensions</dt>
+      <dd>Markdown extensions to be added or removed from the
+default definition or R Markdown. See the <code>rmarkdown_format</code> for
+additional details.</dd>
     </dl>
     
-    <div class="Value">
-      <h2>Value</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-      <p>TRUE if <code>x</code> can be converted into a numeric vector by 
-<code>as.numeric</code> without coercing character elements without a 
-commonly-understood numeric representation.</p>
-    </div>
+    <p>R Markdown output format to pass to
+  <code><a href='http://www.rdocumentation.org/packages/rmarkdown/topics/render'>render</a></code></p>
     
-    <h2 id="examples">Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>3</span>, <span class='st'>"3"</span>, <span class='fl'>NA</span>)
-<span class='no'>xx</span> <span class='kw'>&lt;-</span> <span class='fu'>c</span>(<span class='no'>x</span>, <span class='st'>"A"</span>)
-<span class='fu'>is_char_numeric</span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; [1] TRUE
-#&gt; </div><div class='input'><span class='co'>## Not run: ------------------------------------</span>
-<span class='co'># is_char_numeric(xx) # FALSE</span>
-<span class='co'>## ---------------------------------------------</span></div></pre>
+
   </div>
-  <div class="col-md-3">
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
+
   </div>
 </div>
 
       <footer>
-      <p>Built by <a href="http://hadley.github.io/pkgdown/">pkgdown</a>. Styled with <a href="http://getbootstrap.com">Bootstrap 3</a>.</p>
+      <div class="copyright">
+  <p>Developed by Sam Boysel.</p>
+</div>
+
+<div class="pkgdown">
+  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+</div>
+
       </footer>
    </div>
 
