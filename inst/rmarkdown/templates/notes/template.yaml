@@ -1,0 +1,4 @@
+name: Notes
+description: >
+  Simple template for notes (LaTeX / HTML / Markdown output)
+create_dir: true

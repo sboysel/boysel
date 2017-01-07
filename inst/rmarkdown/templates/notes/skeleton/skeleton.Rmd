@@ -1,0 +1,87 @@
+---
+title: "Title"
+author: "Author"
+email: "email@domain.com"
+affiliation: "Affiliation"
+date: '`r format(Sys.time(), "%m/%d/%Y")`'
+header-includes:          # for including arbitrary lines in preamble
+  - \usepackage{lipsum}   # Remove this line if using boysel::notes_html
+## (1) PDF Options -------------------------------------------------------------
+papersize: letter
+fontsize: 11pt
+documentclass: article
+classoption: []
+geometry: margin=1in
+linestretch: 1
+fontfamily: default
+fontfamilyoptions: []
+linkcolor: blue
+citecolor: blue
+urlcolor: blue
+toccolor: blue
+multicol: false # false -> single column, n -> n columns
+natbiboptions: [round, authoryear]
+bibliography: references.bib
+biblio-style: plainnat
+biblio-title: "References"
+output:
+  boysel::notes_pdf:
+    toc: yes
+    toc_depth: 2
+    citation_package: natbib
+    number_sections: yes
+    fig_height: 6
+    fig_width: 6
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: default
+    highlight: default
+    mathjax: default
+    keep_md: yes
+    number_sections: yes
+    fig_width: 6
+    fig_height: 6
+    fig_caption: yes
+---
+
+# Usage
+
+## Equations
+
+Just use regular LaTeX expressions enclosed in either `\(...\)` for inline equations such as \(\bar{x} = \frac{1}{n}\sum_{i = 1}^{n}x_{i}\) or `\[...\]` to display an equation in its own line:
+
+\[\bar{x} = \frac{1}{n}\sum_{i = 1}^{n}x_{i}\]
+
+## Citations
+
+Citations are generated using BibTex and can be linked using the following syntax.
+
+| Citation     | Code                  | Output              |
+|:-------------|:----------------------|:--------------------|
+|Parenthetical |`[@heckman1979sample]` |[@heckman1979sample] |
+|Inline        |`@heckman1979sample`   |@heckman1979sample   |
+
+  Table: Citations.
+
+## Columns
+
+Specify the number of columns for the main body of the document changing the parameter `multicol` in the YAML header.  For example, if you want 2 columns, use `multicol: 2`.  Default is `multicol: false`, which yields a single column.
+
+## Inline Footnotes
+
+Foonotes are neat^[Yeah they are.].
+
+## Code
+
+```{r eval=TRUE}
+hello_world <- function() {
+  print("Hello World!")
+}
+hello_world()
+```
+
+# Text
+
+\lipsum[1-10]
