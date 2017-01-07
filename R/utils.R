@@ -117,3 +117,28 @@ matches <- function(x, pattern = ".", ...) {
   x[grepl(pattern = pattern, x = x, ...)]
 }
 
+#' Symmetric set difference
+#' 
+#' @param x a vector
+#' @param y a vector of the same type as \code{x}.
+#' @return the symmetric difference of set \code{x} and \code{y}.
+#' 
+#' @references Weisstein, Eric W. "Symmetric Difference." 
+#' From MathWorld--A Wolfram Web Resource. 
+#' \url{http://mathworld.wolfram.com/SymmetricDifference.html}
+#' 
+#' @examples
+#' x <- c(1, 2, 3, 4)
+#' y <- c(1, 4, 5)
+#' symdiff(x, y)
+#' x <- letters[1:4]
+#' y <- letters[2:6]
+#' symdiff(x, y)
+#' 
+#' @export
+symdiff <- function(x, y) {
+  base::union(
+    base::setdiff(x, y),
+    base::setdiff(y, x)
+  )
+}

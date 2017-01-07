@@ -54,3 +54,12 @@ test_that("matches() grabs matching elements from character vectors", {
   expect_silent(matches(xx, c("foo", "bar")))
   expect_equal(yy, zz)
 })
+
+test_that("symdiff behaves", {
+  x <- c(1, 2, 3, 4)
+  y <- c(1, 4, 5)
+  expect_equal(symdiff(x, y), c(2, 3, 5))
+  x <- letters[1:4]
+  y <- letters[2:5]
+  expect_equal(symdiff(x, y), c("a", "e"))
+})
