@@ -1,9 +1,13 @@
-R=/usr/bin/R
+R := $(wildcard R/*.R)
 
-all: knit docs
+all: README.md docs
 
-knit: README.Rmd
-	$(R) -e "knitr::knit('README.Rmd')"
+README.md: README.Rmd
+		R -e "knitr::knit('README.Rmd')"
 
-docs:
-	$(R) -e "pkgdown::build_site()"
+docs: $(R)
+		R -e "devtools::document()"
+		R -e "pkgdown::build_site()"
+	  
+clean:
+		rm -rf README.md docs
