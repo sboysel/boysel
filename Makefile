@@ -1,6 +1,6 @@
 R := $(wildcard R/*.R)
 
-all: README.md docs
+all: README.md
 
 README.md: README.Rmd
 		R -e "knitr::knit('README.Rmd')"
