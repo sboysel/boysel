@@ -3,7 +3,7 @@ R := $(wildcard R/*.R)
 all: README.md
 
 README.md: README.Rmd
-		R -e "knitr::knit('README.Rmd')"
+		R -e "rmarkdown::render('README.Rmd')"
 
 docs: $(R)
 		R -e "devtools::document()"
