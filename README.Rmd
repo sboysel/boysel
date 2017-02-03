@@ -24,5 +24,4 @@ A collection of miscellaneous R functions in the spirit of
 
 ### TODO
 
-- [ ] Finish tests
-- [ ] Embed fonts in PDF output for article template
+- [x] Finish tests
