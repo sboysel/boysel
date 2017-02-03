@@ -1,4 +1,4 @@
-name: Article
+name: Article (PDF / HTML / Markdown)
 description: >
-  Simple and flexible publication-quality LaTeX / HTML / Markdown template
+  Simple and flexible article template.  Simultaneuous output options include PDF, HTML, and Markdown.
 create_dir: true

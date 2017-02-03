@@ -1,23 +1,25 @@
 ---
-title: "Untitled"
-author: Jane Doe
+title: "Title"
+author: "Author"
+email: "email@domain.com"
+affiliation: "Affiliation"
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 abstract: >
-  An abstract will go here.
+  Abstract.
+papersize: letter
 fontsize: 12pt
+fontfamily: default
 geometry: margin=1in
+linestretch: 1
 colorlinks: true
 linkcolor: blue
-urlcolor: blue
 citecolor: blue
+urlcolor: blue
 toccolor: blue
 bibliography: references.bib
-link-citations: true
-header-includes:
-  - \usepackage{amsmath}
-  - \usepackage{amsfonts}
 output:
   pdf_document:
+    citation_package: natbib
     fig_caption: true
     fig_height: 6
     fig_width: 6
@@ -44,47 +46,45 @@ library(knitr)
 opts_chunk$set(comment = "#>")
 ```
 
+# `boysel` Article Template
 
-# First
+## Mathematical Expressions
 
-## Footnotes and Citations
+Just use regular LaTeX expressions enclosed in either `\(...\)` for inline equations such as \(\bar{x} = \frac{1}{n}\sum_{i = 1}^{n}x_{i}\) or `\[...\]` to display an equation in its own line:
 
-| Markdown              | Output               |
-|:----------------------|:---------------------|
-|`@heckman1979sample`   | @heckman1979sample   |
-|`[@heckman1979sample]` | [@heckman1979sample] |
-|`...foo^[A footnote.].`| ...foo^[A footnote.].|
+\[\bar{x} = \frac{1}{n}\sum_{i = 1}^{n}x_{i}\]
 
-Table: Footnotes and Citations
+## Citations
 
-## Mathematical Equations
+Citations are generated using BibTex and can be linked using the following syntax.
 
-For $S_{n} = \sum_{k = 0}^{n}r^{k}$ and $r < \lvert 1 \rvert$, $S_{\infty} = \sum_{k = 0}^{\infty}r^{k} = \frac{1}{1 - r}$.  For $X \sim f(X = x)$,
+| Citation     | Code                  | Output              |
+|:-------------|:----------------------|:--------------------|
+|Parenthetical |`[@heckman1979sample]` |[@heckman1979sample] |
+|Inline        |`@heckman1979sample`   |@heckman1979sample   |
 
-\[\mathbb{E}[X] \equiv \int_{x \in X} xf(x)dx\]
+  Table: Citations.
 
-## `R` Code Chunks
+## Inline Footnotes
 
-```{r}
-library(ggplot2)
-ggplot(data = diamonds, aes(x = carat, y = price, colour = cut)) +
-  geom_point()
+Foonotes are neat^[Yeah they are.].
+
+## Code
+
+```{r eval=TRUE}
+hello_world <- function() {
+  print("Hello World!")
+}
+hello_world()
 ```
 
-## Code Chunks with other engines
+## Document includes
 
-### Python
+Add arbitrary content to the headers of each output document.  For example, to include extra LaTeX packages:
 
-```{python}
-s = 'hello, world!'
-print(s)
-```
-
-### Bash
-
-```{bash}
-fortune | cowsay
+```{yaml}
+header-includes:
+  - \usepackage{lipsum}
 ```
 
 # References
-
