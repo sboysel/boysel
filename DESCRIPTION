@@ -13,7 +13,7 @@ LazyData: TRUE
 Imports:
   rmarkdown (>= 1.3),
   rstudioapi (>= 0.5)
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Suggests:
   testthat,
   ggplot2

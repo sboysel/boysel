@@ -2,23 +2,23 @@
 % Please edit documentation in R/statfuns.R
 \name{most_freq}
 \alias{most_freq}
+\alias{most_freq.numeric}
 \alias{most_freq.character}
 \alias{most_freq.factor}
-\alias{most_freq.numeric}
 \title{Statistical Mode}
 \usage{
-most_freq(x, na.rm = TRUE)
+most_freq(x, ...)
 
-\method{most_freq}{numeric}(x, na.rm = TRUE)
+\method{most_freq}{numeric}(x, ...)
 
-\method{most_freq}{character}(x, na.rm = TRUE)
+\method{most_freq}{character}(x, ...)
 
-\method{most_freq}{factor}(x, na.rm = TRUE)
+\method{most_freq}{factor}(x, ...)
 }
 \arguments{
 \item{x}{a vector}
 
-\item{na.rm}{logical If TRUE, all NA values will be dropped.}
+\item{...}{additional parameters passed on to \code{table}.}
 }
 \value{
 a scalar equal to the modal value of \code{x}.  If \code{x} is multimodal, \code{length(x)}
@@ -41,4 +41,3 @@ most_freq(xx)
 \references{
 \url{http://mathworld.wolfram.com/Mode.html}
 }
-

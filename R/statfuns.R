@@ -4,7 +4,7 @@
 #' a vector.
 #'
 #' @param x a numeric vector
-#' @param na.rm Passed directly to \code{sd()} and \code{mean()}.
+#' @param na.rm Passed directly to \code{sd} and \code{mean}.
 #' @return a scalar equal to \eqn{\frac{s_{x}}{\overline{x}}}.
 #'
 #' @examples
@@ -25,7 +25,7 @@ cv <- function(x, na.rm = FALSE) {
 #' Calculate most frequently occuring value in a vector.
 #' 
 #' @param x a vector
-#' @param na.rm logical If TRUE, all NA values will be dropped.
+#' @param ... additional parameters passed on to \code{table}.
 #' @return a scalar equal to the modal value of \code{x}.  If \code{x} is multimodal, \code{length(x)}
 #' will equal the number of unique modes in \code{x}.
 #' @references \url{http://mathworld.wolfram.com/Mode.html}
@@ -42,30 +42,30 @@ cv <- function(x, na.rm = FALSE) {
 #' 
 #' @export
 #' @rdname most_freq
-most_freq <- function(x, na.rm = TRUE) {
+most_freq <- function(x, ...) {
   UseMethod("most_freq")
 }
 
 #' @export
 #' @rdname most_freq
-most_freq.numeric <- function(x, na.rm = TRUE) {
-  tab <- table(x)
+most_freq.numeric <- function(x, ...) {
+  tab <- table(x, ...)
   m <- which(tab == max(tab, na.rm = TRUE), arr.ind = TRUE)
   as_numeric(names(tab)[m])
 }
 
 #' @export
 #' @rdname most_freq
-most_freq.character <- function(x, na.rm = TRUE) {
-  tab <- table(x)
+most_freq.character <- function(x, ...) {
+  tab <- table(x, ...)
   m <- which(tab == max(tab, na.rm = TRUE), arr.ind = TRUE)
   names(tab)[m]
 }
 
 #' @export
 #' @rdname most_freq
-most_freq.factor <- function(x, na.rm = TRUE) {
-  tab <- table(x)
+most_freq.factor <- function(x, ...) {
+  tab <- table(x, ...)
   m <- which(tab == max(tab, na.rm = TRUE), arr.ind = TRUE)
- factor(names(tab)[m])
+  factor(names(tab)[m])
 }
