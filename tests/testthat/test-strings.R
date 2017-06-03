@@ -23,5 +23,5 @@ test_that("text_wrap functions properly", {
 
 test_that("translit functions properly", {
   s <- c("dó", "dà", "trí", "trì") 
-  expect_equal(translit(s), c("d'o", "d`a", "tr'i", "tr`i"))
+  expect_equal(translit(s), c("do", "da", "tri", "tri"))
 })
