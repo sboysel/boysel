@@ -15,4 +15,3 @@ the number of non-NA observations in \code{x} as an integer.
 \description{
 Count the number of non-NA observations in a vector
 }
-

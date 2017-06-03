@@ -31,4 +31,3 @@ Weisstein, Eric W. "Symmetric Difference."
 From MathWorld--A Wolfram Web Resource. 
 \url{http://mathworld.wolfram.com/SymmetricDifference.html}
 }
-

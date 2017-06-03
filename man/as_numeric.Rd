@@ -38,4 +38,3 @@ as_numeric(x)
 \code{as_numeric.factor} directly follows the suggestion from the 
 \code{Warning} section of \code{\link{factor}}.
 }
-

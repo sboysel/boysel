@@ -9,7 +9,7 @@ cv(x, na.rm = FALSE)
 \arguments{
 \item{x}{a numeric vector}
 
-\item{na.rm}{Passed directly to \code{sd()} and \code{mean()}.}
+\item{na.rm}{Passed directly to \code{sd} and \code{mean}.}
 }
 \value{
 a scalar equal to \eqn{\frac{s_{x}}{\overline{x}}}.
@@ -29,4 +29,3 @@ Weisstein, Eric W. "Variation Coefficient." From MathWorld--A
 Wolfram Web Resource.
 \url{http://mathworld.wolfram.com/VariationCoefficient.html}
 }
-

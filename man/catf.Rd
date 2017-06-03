@@ -26,4 +26,3 @@ catf("foo")
 Attributed to Yihui Xie via StackOverflow:
 \url{http://stackoverflow.com/a/29264573/3277821}
 }
-

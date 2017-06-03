@@ -30,4 +30,3 @@ matches(x = xx, pattern = c("foo", "bar"))
 matches(x = xx, pattern = "^b.*")
 
 }
-

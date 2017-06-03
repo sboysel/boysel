@@ -26,4 +26,3 @@ sample_df(mtcars, n = 0.1)
 \seealso{
 \code{\link[dplyr]{sample_n}}, \code{\link[dplyr]{sample_frac}}.
 }
-

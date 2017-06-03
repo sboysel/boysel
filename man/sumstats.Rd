@@ -2,8 +2,8 @@
 % Please edit documentation in R/sumstats.R
 \name{sumstats}
 \alias{sumstats}
-\alias{sumstats.data.frame}
 \alias{sumstats.numeric}
+\alias{sumstats.data.frame}
 \title{Simple summary statistics}
 \usage{
 sumstats(data, ...)
@@ -54,4 +54,3 @@ sumstats(iris, . ~ Species)
 sumstats(mtcars, cbind(mpg, wt) ~ cyl + vs)
 sumstats(mtcars, cbind(mpg, wt) ~ cyl + vs, order = FALSE)
 }
-

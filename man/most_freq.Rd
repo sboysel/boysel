@@ -5,7 +5,7 @@
 \alias{most_freq.numeric}
 \alias{most_freq.character}
 \alias{most_freq.factor}
-\title{Statistical Mode}
+\title{Calculate most frequently occuring value in a vector}
 \usage{
 most_freq(x, ...)
 
@@ -16,16 +16,17 @@ most_freq(x, ...)
 \method{most_freq}{factor}(x, ...)
 }
 \arguments{
-\item{x}{a vector}
+\item{x}{a vector.}
 
 \item{...}{additional parameters passed on to \code{table}.}
 }
 \value{
-a scalar equal to the modal value of \code{x}.  If \code{x} is multimodal, \code{length(x)}
-will equal the number of unique modes in \code{x}.
+a scalar equal to the modal value of \code{x}.  If 
+\code{x} is multimodal, \code{length(x)} will equal the number 
+of unique modes in \code{x}.
 }
 \description{
-Calculate most frequently occuring value in a vector.
+Calculate most frequently occuring value in a vector (statistical mode).
 }
 \examples{
 x <- c(0, 1, 2, 3, 4, 5, 0)

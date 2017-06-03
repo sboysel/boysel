@@ -26,4 +26,3 @@ R Markdown output format to pass to
 \description{
 Attribution: \url{https://github.com/rstudio/rticles}.
 }
-

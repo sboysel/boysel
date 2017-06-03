@@ -33,4 +33,3 @@ Rescale (normalize) a vector
 \references{
 \url{https://en.wikipedia.org/wiki/Normalization_(statistics)}
 }
-

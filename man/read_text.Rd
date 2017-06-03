@@ -27,4 +27,3 @@ t <- "id,x,y\\na,1,2\\nb,3,4"
 read_text(t)
 
 }
-

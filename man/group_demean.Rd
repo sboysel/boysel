@@ -2,8 +2,8 @@
 % Please edit documentation in R/demean.R
 \name{group_demean}
 \alias{group_demean}
-\alias{group_demean.formula}
 \alias{group_demean.numeric}
+\alias{group_demean.formula}
 \title{Subtract mean values by grouping factor}
 \usage{
 group_demean(...)
@@ -52,4 +52,3 @@ group_demean(x, g)
 group_demean(mpg ~ cyl, mtcars)
 
 }
-
