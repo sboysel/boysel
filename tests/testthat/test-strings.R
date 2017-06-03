@@ -20,3 +20,8 @@ test_that("text_wrap functions properly", {
   expect_silent(text_wrap(x = "hello", n = 10))
   expect_silent(text_wrap(x = "hello", n = 10L))
 })
+
+test_that("translit functions properly", {
+  s <- c("dó", "dà", "trí", "trì") 
+  expect_equal(translit(s), c("d'o", "d`a", "tr'i", "tr`i"))
+})
