@@ -6,7 +6,7 @@ check:
 		R -e "devtools::check()"
 
 README.md: README.Rmd
-		R -e "rmarkdown::render('README.Rmd')"
+		R -e "knitr::knit('README.Rmd')"
 
 docs: check $(R)
 		R -e "pkgdown::build_site()"
