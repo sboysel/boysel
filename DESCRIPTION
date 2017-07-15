@@ -1,7 +1,7 @@
 Package: boysel
 Type: Package
 Title: A collection of miscellaneous R functions
-Version: 2017.1.7.9000
+Version: 2017.7.15.9000
 Authors@R: person("Sam", "Boysel", email = "sboysel@gmail.com", 
   role = c("aut", "cre"))
 Maintainer: Sam Boysel <sboysel@gmail.com>
