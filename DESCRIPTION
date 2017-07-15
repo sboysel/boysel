@@ -12,7 +12,9 @@ License: GPL-3
 LazyData: TRUE
 Imports:
   rmarkdown (>= 1.3),
-  rstudioapi (>= 0.5)
+  rstudioapi (>= 0.5),
+  git2r,
+  packrat
 RoxygenNote: 6.0.1
 Suggests:
   testthat,

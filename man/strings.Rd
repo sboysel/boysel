@@ -6,6 +6,7 @@
 \alias{chomp}
 \alias{text_wrap}
 \alias{translit}
+\alias{rand_string}
 \title{String / text processing functions}
 \usage{
 trim(x)
@@ -15,6 +16,8 @@ chomp(x)
 text_wrap(x, n = 20L)
 
 translit(x, ...)
+
+rand_string(n)
 }
 \arguments{
 \item{x}{a character vector}
@@ -35,6 +38,7 @@ String / text processing functions
   delimiters for the immediate next space (e.g. ' ') after every \code{n}th character.}
   \item{\code{translit}}{returns a version of \code{x} recoded to ASCII, using \code{iconv} and 
   \code{//TRANSLIT}.  Parameters in \code{...} are passed directly to \code{iconv}.}
+  \item{\code{rand_string}}{returns a randomly generated alphanumeric string of length \code{n}.}
 }
 }
 \examples{
@@ -47,6 +51,8 @@ s <- "The quick brown fox jumped over the lazy dog."
 text_wrap(s)
 text_wrap(s, 10)
 cat(paste0(text_wrap(s), "\\n"))
+rand_string()
+rand_string(5)
 
 }
 \references{

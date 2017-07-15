@@ -25,3 +25,9 @@ test_that("translit functions properly", {
   s <- c("dó", "dà", "trí", "trì") 
   expect_equal(translit(s), c("do", "da", "tri", "tri"))
 })
+
+test_that("rand_string functions properly", {
+  expect_is(rand_string(sample(1:10, 1)), "character")
+  expect_length(rand_string(10), 1)
+  expect_equal(nchar(rand_string(10)), 10)
+})

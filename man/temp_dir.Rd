@@ -15,3 +15,10 @@ the full directory path of the temporary directory as a string.
 \description{
 Creates a temporary subdirectory of \code{tempdir()}.
 }
+\examples{
+tmp <- temp_dir()
+tmp
+dir.exists(tmp)
+unlink(tmp, force = TRUE)
+
+}

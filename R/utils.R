@@ -149,7 +149,14 @@ symdiff <- function(x, y) {
 #' 
 #' @param nchar integer length of random string used as directory name.
 #' @return the full directory path of the temporary directory as a string.
+#' 
+#' @examples
+#' tmp <- temp_dir()
+#' tmp
+#' dir.exists(tmp)
+#' unlink(tmp, force = TRUE)
 #'
+#' @export
 temp_dir <- function(nchar = 10L) {
   tmp <- file.path(tempdir(), rand_string(n = nchar))
   dir.create(tmp, showWarnings = FALSE, recursive = TRUE)

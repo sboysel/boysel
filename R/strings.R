@@ -12,6 +12,7 @@
 #'   delimiters for the immediate next space (e.g. ' ') after every \code{n}th character.}
 #'   \item{\code{translit}}{returns a version of \code{x} recoded to ASCII, using \code{iconv} and 
 #'   \code{//TRANSLIT}.  Parameters in \code{...} are passed directly to \code{iconv}.}
+#'   \item{\code{rand_string}}{returns a randomly generated alphanumeric string of length \code{n}.}
 #' }
 #' 
 #' @references I attribute the regular expression that powers \code{text_wrap()} 
@@ -28,6 +29,8 @@
 #' text_wrap(s)
 #' text_wrap(s, 10)
 #' cat(paste0(text_wrap(s), "\n"))
+#' rand_string()
+#' rand_string(5)
 #'
 #' @name strings
 
@@ -54,4 +57,11 @@ text_wrap <- function(x, n = 20L) {
 #' @export
 translit <- function(x, ...) {
   iconv(x = x, to = "ASCII//TRANSLIT", ...)
+}
+
+#' @rdname strings
+#' @export
+rand_string <- function(n) {
+  paste0(sample(c(letters, LETTERS, 0:9),
+                size = n, replace = TRUE), collapse = "")
 }
