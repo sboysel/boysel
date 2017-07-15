@@ -1,0 +1,14 @@
+Binding: project_template
+Title: Project Template (Boysel & Parsa)
+
+Parameter: use_git
+Widget: CheckboxInput
+Label: Use git with this project
+Default: Off
+Position: left
+
+Parameter: use_packrat
+Widget: CheckboxInput
+Label: Use packrat with this project
+Default: Off
+Position: left
