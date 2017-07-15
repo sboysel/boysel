@@ -33,6 +33,9 @@ output:
     highlight: pygments
     toc: true
     toc_depth: 3
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
   md_document:
     variant: markdown_github
     fig_height: 6
