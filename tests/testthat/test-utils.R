@@ -63,3 +63,13 @@ test_that("symdiff behaves", {
   y <- letters[2:5]
   expect_equal(symdiff(x, y), c("a", "e"))
 })
+
+test_that("temp_dir functions properly", {
+  tmp <- temp_dir()
+  expect_length(tmp, 1)
+  expect_is(tmp, "character")
+  expect_true(dir.exists(tmp))
+  expect_length(list.files(tmp), 0)
+  unlink(tmp, force = TRUE, recursive = TRUE)
+  expect_false(dir.exists(tmp))
+})

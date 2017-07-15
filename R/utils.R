@@ -142,3 +142,16 @@ symdiff <- function(x, y) {
     base::setdiff(y, x)
   )
 }
+
+#' Create a temporary directory
+#' 
+#' Creates a temporary subdirectory of \code{tempdir()}.
+#' 
+#' @param nchar integer length of random string used as directory name.
+#' @return the full directory path of the temporary directory as a string.
+#'
+temp_dir <- function(nchar = 10L) {
+  tmp <- file.path(tempdir(), rand_string(n = nchar))
+  dir.create(tmp, showWarnings = FALSE, recursive = TRUE)
+  tmp
+}
