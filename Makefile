@@ -1,12 +1,9 @@
 R := $(wildcard R/*.R)
 
-all: docs README.md
+all: docs
 
-check:
+check: $(R)
 		R -e "devtools::check()"
-
-README.md: README.Rmd
-		R -e "knitr::knit('README.Rmd')"
 
 docs: check $(R)
 		R -e "pkgdown::build_site()"
