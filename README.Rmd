@@ -2,6 +2,8 @@
 output:
   md_document:
     variant: markdown_github
+  html_document:
+    self_contained: no
 ---
 
 ## boysel
@@ -25,3 +27,5 @@ A collection of miscellaneous R functions in the spirit of
 ### TODO
 
 - [x] Finish tests
+- [ ] Package vignette
+
