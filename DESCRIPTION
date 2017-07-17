@@ -7,7 +7,7 @@ Authors@R: person("Sam", "Boysel", email = "sboysel@gmail.com",
 Maintainer: Sam Boysel <sboysel@gmail.com>
 URL: https://github.com/sboysel/boysel
 BugReports: https://github.com/sboysel/boysel/issues
-Description: Contains some handy utility functions I use day to day.
+Description: Collection of handy utility functions I've found myself writing more than once.
 License: GPL-3
 LazyData: TRUE
 Imports:
