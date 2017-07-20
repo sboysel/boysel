@@ -15,18 +15,12 @@ test_that("is_installed()", {
   expect_identical(is_installed(datasets), is_installed("datasets"))
 })
 
-test_that("lib() basic functionality", {
-  b <- is_installed(magrittr)
-  lib(magrittr)
-  expect_true(lib(magrittr))
-  expect_true(is_installed(magrittr))
-  if (!b) remove.packages("magrittr")
-})
-
-test_that("lib() accepts additional arguments", {
-  tmp <- tempdir()
+test_that("lib functions properly", {
+  tmp <- temp_dir()
   old_paths <- .libPaths()
   .libPaths(c(tmp, old_paths))
+  expect_true(lib(magrittr, lib = tmp, lib.loc = tmp))
+  expect_true(is_installed(magrittr, lib.loc = tmp))
   expect_true(lib(magrittr, lib = tmp, lib.loc = tmp))
   .libPaths(old_paths)
   unlink(tmp)

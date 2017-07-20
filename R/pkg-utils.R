@@ -5,9 +5,9 @@
 #'
 #' @param pkg a package name either as a string or as a bare (i.e. unquoted) 
 #' name.
-#' @param ... additional arguments passed to either \code{\link{install.packages}}
-#' or \code{\link{library}}.  Properly named arguments will be passed to the
-#' appropriate function.
+#' @param ... additional arguments passed to either \code{\link{install.packages}}, 
+#' \code{\link{installed.packages}}, or \code{\link{library}}.  Properly named arguments
+#' will be passed to the appropriate function.
 #'
 #' @details \code{loaded_pkgs()} returns a vector of attached packages.
 #' \code{is_installed(pkg)} returns a logical value indicating if \code{pkg} is
@@ -38,9 +38,9 @@ loaded_pkgs <- function() {
 
 #' @export
 #' @rdname pkg
-is_installed <- function(pkg) {
+is_installed <- function(pkg, ...) {
   pkg_chr <- name_to_char(substitute(pkg))
-  pkg_chr %in% utils::installed.packages()
+  pkg_chr %in% utils::installed.packages(...)
 } 
 
 #' @export
@@ -50,11 +50,21 @@ lib <- function(pkg, ...) {
   # - Enhancement: pass character strings for development   [ ]
   #   packages (e.g. "githubusername/githubreponame") to
   #   devtools::install_github
+  
   pkg_chr <- name_to_char(substitute(pkg))
   all.args <- list(...)
+  
+  # parse arguments to appropriate functions
   library.args <- all.args[names(all.args) %in% names(formals(library))]
-  install.args <- all.args[!names(all.args) %in% names(formals(library))]
-  if (!is_installed(pkg_chr)) {
+  install.args <- all.args[names(all.args) %in% names(formals(utils::install.packages))]
+  is_installed.args <- all.args[names(all.args) %in% names(formals(utils::installed.packages))]
+  
+  if (!"lib.loc" %in% names(is_installed.args) & "lib" %in% names(all.args)) {
+    is_installed.args["lib.lic"] <- all.args["lib"]
+  }
+  
+  if (!do.call(is_installed, c(pkg = pkg_chr,
+                               is_installed.args))) {
     do.call(utils::install.packages, c(pkgs = pkg_chr,
                                        install.args))
   }
