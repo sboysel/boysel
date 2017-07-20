@@ -21,9 +21,18 @@ test_that("text_wrap functions properly", {
   expect_silent(text_wrap(x = "hello", n = 10L))
 })
 
-test_that("translit functions properly", {
+test_that("translit functions properly (personal macOS machine)", {
+  skip_on_travis()
   s <- c("dó", "dà", "trí", "trì") 
-  expect_equal(translit(s), c("do", "da", "tri", "tri"))
+  # based on expected results for macOS with libiconv
+  expect_equal(translit(s), c("d'o", "d`a", "tr'i","tr`i"))
+})
+
+test_that("translit functions properly (Travis CI)", {
+  skip_on_os(os = "mac")
+  s <- c("dó", "dà", "trí", "trì") 
+  # based on expected results for Travis build image with glibc
+  expect_equal(translit(s), c("do", "da", "tri","tri"))
 })
 
 test_that("rand_string functions properly", {
