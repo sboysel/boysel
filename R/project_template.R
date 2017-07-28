@@ -13,6 +13,11 @@ project_template <- function(path, use_git, use_packrat) {
   
   dir.create(path, showWarnings = FALSE, recursive = TRUE)
   
+  file.copy(
+    from = system.file("rstudio", "templates", "project", "Rprofile", package = "boysel"),
+    to = file.path(path, ".Rprofile")
+  )
+  
   for (x in c("analysis", "build")) {
     for (y in c("input", "code", "temp", "output")) {
       dir.create(file.path(path, x, y), showWarnings = FALSE, recursive = TRUE)
