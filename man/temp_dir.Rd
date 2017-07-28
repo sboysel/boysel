@@ -4,16 +4,20 @@
 \alias{temp_dir}
 \title{Create a temporary directory}
 \usage{
-temp_dir(nchar = 10L)
+temp_dir(path = tempdir(), nchar = 10L)
 }
 \arguments{
-\item{nchar}{integer length of random string used as directory name.}
+\item{path}{base directory in which temporary directory will be created.  Defaults
+to \code{\link{tempdir}}.}
+
+\item{nchar}{integer length of random string used as directory name.  Default is
+\code{10}.}
 }
 \value{
 the full directory path of the temporary directory as a string.
 }
 \description{
-Creates a temporary subdirectory of \code{tempdir()}.
+Creates a temporary subdirectory of \code{\link{tempdir}}.
 }
 \examples{
 tmp <- temp_dir()
