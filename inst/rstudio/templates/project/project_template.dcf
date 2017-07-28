@@ -1,5 +1,7 @@
 Binding: project_template
-Title: Project Template (Boysel & Parsa)
+Title: Project Template
+Subtitle: RStudio project template for conventions used by Boysel & Parsa.
+OpenFiles: analysis/output/analysis.Rmd
 
 Parameter: use_git
 Widget: CheckboxInput
