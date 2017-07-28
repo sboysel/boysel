@@ -43,18 +43,6 @@ test_that("catf() spits out files", {
   unlink(tmp)
 })
 
-test_that("matches() grabs matching elements from character vectors", {
-  xx <- c("foo", "foo", "bar", "baz")
-  y <- matches(xx, "foo")
-  z <- xx[grepl("foo", xx)]
-  yy <- matches(xx, "(foo|bar)")
-  zz <- matches(xx, c("foo", "bar"))
-  expect_equal(y, z)
-  expect_equal(matches(xx), xx)
-  expect_silent(matches(xx, c("foo", "bar")))
-  expect_equal(yy, zz)
-})
-
 test_that("symdiff behaves", {
   x <- c(1, 2, 3, 4)
   y <- c(1, 4, 5)

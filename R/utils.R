@@ -91,32 +91,6 @@ catf <- function(f) {
   cat(readLines(con = f, warn = FALSE), sep = "\n")
 }
 
-#' Return matching elements in a vector
-#' 
-#' @param x a character vector with elements to be matched
-#' @param pattern a regular expression.  If \code{length(pattern) > 1}, each element 
-#' is concatenated and a search using \href{https://en.wikipedia.org/wiki/Regular_expression#Basic_concepts}{alternation}.
-#' @param ... additional arguments passed to \code{\link{grepl}}.
-#' @return a character vector with the elements of \code{x} that match \code{pattern}
-#' 
-#' @examples 
-#' xx <- c("foo", "bar", "baz")
-#' matches(x = xx)
-#' matches(x = xx, pattern = "foo")
-#' matches(x = xx, pattern = "(foo|bar)")
-#' # should be equivalent to
-#' matches(x = xx, pattern = c("foo", "bar"))
-#' matches(x = xx, pattern = "^b.*")
-#' 
-#' @export
-matches <- function(x, pattern = ".", ...) {
-  stopifnot(is.character(x), is.character(pattern))
-  if (length(pattern) > 1) {
-    pattern <- paste0("(", paste0(pattern, collapse = "|"), ")")
-  }
-  x[grepl(pattern = pattern, x = x, ...)]
-}
-
 #' Symmetric set difference
 #' 
 #' @param x a vector
@@ -145,9 +119,12 @@ symdiff <- function(x, y) {
 
 #' Create a temporary directory
 #' 
-#' Creates a temporary subdirectory of \code{tempdir()}.
+#' Creates a temporary subdirectory of \code{\link{tempdir}}.
 #' 
-#' @param nchar integer length of random string used as directory name.
+#' @param path base directory in which temporary directory will be created.  Defaults
+#' to \code{\link{tempdir}}.
+#' @param nchar integer length of random string used as directory name.  Default is
+#' \code{10}.
 #' @return the full directory path of the temporary directory as a string.
 #' 
 #' @examples
@@ -157,8 +134,8 @@ symdiff <- function(x, y) {
 #' unlink(tmp, force = TRUE)
 #'
 #' @export
-temp_dir <- function(nchar = 10L) {
-  tmp <- file.path(tempdir(), rand_string(n = nchar))
+temp_dir <- function(path = tempdir(), nchar = 10L) {
+  tmp <- file.path(path, rand_string(n = nchar))
   dir.create(tmp, showWarnings = FALSE, recursive = TRUE)
   tmp
 }
