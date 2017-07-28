@@ -85,8 +85,8 @@
 
     
     <p>Collapse multiple original values of a vector into single new values.  An
-alternative to nested <code>ifelse()</code> statements, <code><a href='http://dplyr.tidyverse.org/reference/recode.html'>dplyr::recode()</a></code>,
-<code><a href='http://www.rdocumentation.org/packages/plyr/topics/revalue'>plyr::revalue()</a></code>, <code><a href='http://www.rdocumentation.org/packages/car/topics/recode'>car::recode()</a></code>, etc.</p>
+alternative to nested <code>ifelse()</code> statements, <code><a href='http://dplyr.tidyverse.org/reference/recode.html'>recode</a></code>,
+<code><a href='http://www.rdocumentation.org/packages/plyr/topics/revalue'>revalue</a></code>, and <code><a href='http://www.rdocumentation.org/packages/car/topics/recode'>recode</a></code></p>
     
 
     <pre class="usage"><span class='fu'>recode</span>(<span class='no'>x</span>, <span class='no'>...</span>, <span class='kw'>.default</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>.na</span> <span class='kw'>=</span> <span class='fl'>NA</span>, <span class='kw'>factor</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
@@ -103,8 +103,7 @@ alternative to nested <code>ifelse()</code> statements, <code><a href='http://dp
     <tr>
       <th>...</th>
       <td><p>a sequence of arguments where the name is the replacement and the
-value are the elements to be replaced.  This is opposite the behavior of
-<code><a href='http://dplyr.tidyverse.org/reference/recode.html'>dplyr::recode()</a></code> and <code><a href='http://www.rdocumentation.org/packages/plyr/topics/revalue'>plyr::revalue()</a></code>.</p></td>
+value are the elements to be replaced.</p></td>
     </tr>
     <tr>
       <th>.default</th>
