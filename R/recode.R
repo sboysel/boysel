@@ -1,13 +1,12 @@
 #' Flexible vector recoding 
 #' 
 #' Collapse multiple original values of a vector into single new values.  An
-#' alternative to nested \code{ifelse()} statements, \code{dplyr::recode()},
-#' \code{plyr::revalue()}, \code{car::recode()}, etc.
+#' alternative to nested \code{ifelse()} statements, \code{\link[dplyr]{recode}},
+#' \code{\link[plyr]{revalue}}, and \code{\link[car]{recode}}
 #'
 #' @param x a vector
 #' @param ... a sequence of arguments where the name is the replacement and the
-#' value are the elements to be replaced.  This is opposite the behavior of
-#' \code{dplyr::recode()} and \code{plyr::revalue()}.
+#' value are the elements to be replaced.
 #' @param one for \code{binary_recode()}, all elements of \code{x} in \code{one}
 #' will be assigned 1, anything in \code{.na} will be assigned NA, and anything
 #' left over will be assigned 0.

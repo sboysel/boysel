@@ -9,8 +9,9 @@ sudo: false
 cache: packages
 
 r_packages:
-  - ggplot2
+  - tidyverse
   - rmarkdown
+  - car
 
 r_github_packages:
   - jimhester/covr

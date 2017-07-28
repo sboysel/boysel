@@ -13,8 +13,7 @@ binary_recode(x, one, .na = NA)
 \item{x}{a vector}
 
 \item{...}{a sequence of arguments where the name is the replacement and the
-value are the elements to be replaced.  This is opposite the behavior of
-\code{dplyr::recode()} and \code{plyr::revalue()}.}
+value are the elements to be replaced.}
 
 \item{.default}{a vector of length 1.  The value is assigned to all elements 
 of \code{x} not matching any of the replacement values in \code{...} or
@@ -41,8 +40,8 @@ returns a vector coerced according to the various recoding arguments provided.
 }
 \description{
 Collapse multiple original values of a vector into single new values.  An
-alternative to nested \code{ifelse()} statements, \code{dplyr::recode()},
-\code{plyr::revalue()}, \code{car::recode()}, etc.
+alternative to nested \code{ifelse()} statements, \code{\link[dplyr]{recode}},
+\code{\link[plyr]{revalue}}, and \code{\link[car]{recode}}
 }
 \details{
 Further information on \code{recode()}'s primary value mapping arguments:
