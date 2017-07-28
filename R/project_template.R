@@ -9,7 +9,6 @@
 #' @return creates project directory and subdirectories.  Initializes git and packrat if specified.
 #' 
 project_template <- function(path, use_git, use_packrat) {
-  # path <- temp_dir()
   
   dir.create(path, showWarnings = FALSE, recursive = TRUE)
   

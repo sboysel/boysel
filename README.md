@@ -2,6 +2,8 @@
 boysel
 ------
 
+[![Build Status](https://travis-ci.org/sboysel/boysel.svg?branch=master)](https://travis-ci.org/sboysel/boysel) [![Codecov](https://codecov.io/gh/sboysel/boysel/branch/master/graph/badge.svg)](https://codecov.io/gh/sboysel/boysel)
+
 <!-- [![Travis](https://img.shields.io/travis/sboysel/boysel.svg?style=flat-square)](https://travis-ci.org/sboysel/boysel) -->
 <!-- [![Codecov](https://img.shields.io/codecov/c/github/sboysel/boysel.svg?style=flat-square)](https://codecov.io/gh/sboysel/boysel) -->
 <!-- [![Version](https://img.shields.io/badge/calver-2017.7.15.9000-brightgreen.svg?style=flat-square)](http://calver.org/) -->
