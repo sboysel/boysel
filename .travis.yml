@@ -8,13 +8,6 @@ r:
 sudo: false
 cache: packages
 
-addons:
-  apt:
-    packages:
-      - fortune-mod
-      - cowsay
-      - python3
-
 r_packages:
   - ggplot2
   - rmarkdown
