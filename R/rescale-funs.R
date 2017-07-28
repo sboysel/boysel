@@ -13,7 +13,7 @@
 #' \describe{
 #'   \item{\code{center}}{\eqn{\frac{x - mean(x)}{sd(x)}}}
 #'   \item{\code{unit_range}}{\eqn{\frac{x - min(x)}{max(x) - min(x)}}}
-#'   \item{\code{unit_length}}{\eqn{\frac{x}{\lVert x \rVert}}}
+#'   \item{\code{unit_length}}{\eqn{\frac{x}{|| x ||}}}
 #' }
 #' 
 #' @references \url{https://en.wikipedia.org/wiki/Normalization_(statistics)}
