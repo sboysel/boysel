@@ -25,13 +25,29 @@
 #' 
 #' @export
 #' @rdname logical
-is_char_numeric <- function(x) {
-  xx <- suppressWarnings(boysel::as_numeric(x))
-  length(xx[is.na(xx)]) == length(x[is.na(x)])
+is_char_numeric <- function(x) UseMethod("is_char_numeric")
+
+#' @export
+#' @rdname logical
+is_char_numeric.default <- function(x) {
+  sapply(x, function(z) {
+    xx <- type.convert(x = z)
+    is.numeric(xx) || is.na(xx)
+  }, USE.NAMES = FALSE, simplify = TRUE)
 }
 
 #' @export
 #' @rdname logical
-is_formula <- function(x) {
-  inherits(x, "formula")
+is_formula <- function(x) UseMethod("is_formula")
+
+#' @export
+#' @rdname logical
+is_formula.formula <- function(x) {
+  as.logical(inherits(x, what = "formula", which = TRUE))
+}
+
+#' @export
+#' @rdname logical
+is_formula.vector <- function(x) {
+  sapply(x, function(z) as.logical(inherits(z, what = "formula", which = TRUE)))
 }
