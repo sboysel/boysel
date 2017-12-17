@@ -31,7 +31,7 @@ is_char_numeric <- function(x) UseMethod("is_char_numeric")
 #' @rdname logical
 is_char_numeric.default <- function(x) {
   sapply(x, function(z) {
-    xx <- type.convert(x = z)
+    xx <- utils::type.convert(x = z)
     is.numeric(xx) || is.na(xx)
   }, USE.NAMES = FALSE, simplify = TRUE)
 }
