@@ -1,3 +1,4 @@
+library(boysel)
 context("Recode")
 
 x <- c(1:5, NA)

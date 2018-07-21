@@ -1,3 +1,4 @@
+library(boysel)
 context("String utilities")
 
 test_that("chomp and trim function properly", {

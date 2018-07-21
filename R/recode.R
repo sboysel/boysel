@@ -2,7 +2,7 @@
 #' 
 #' Collapse multiple original values of a vector into single new values.  An
 #' alternative to nested \code{ifelse()} statements, \code{\link[dplyr]{recode}},
-#' \code{\link[plyr]{revalue}}, and \code{\link[car]{recode}}
+#' and \code{\link[plyr]{revalue}}.
 #'
 #' @param x a vector
 #' @param ... a sequence of arguments where the name is the replacement and the

@@ -1,3 +1,4 @@
+library(boysel)
 context("Group de-mean")
 
 x <- 1:10

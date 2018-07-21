@@ -1,3 +1,4 @@
+library(boysel)
 context("reshape wrappers")
 
 test_that("wrappers work on toy examples", {

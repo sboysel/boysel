@@ -1,3 +1,4 @@
+library(boysel)
 context("Rescaling functions")
 
 w <- 1:5

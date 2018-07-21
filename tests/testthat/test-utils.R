@@ -1,3 +1,4 @@
+library(boysel)
 context("Utilities")
 
 test_that("count function, n()", {
