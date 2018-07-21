@@ -1,3 +1,4 @@
+library(boysel)
 context("Summary Statistics")
 
 test_that("cv() behaves", {

@@ -1,3 +1,4 @@
+library(boysel)
 context("Data I/O")
 
 test_that("Reading csv from a text string works", {

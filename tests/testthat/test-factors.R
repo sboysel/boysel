@@ -1,3 +1,4 @@
+library(boysel)
 context("Factors")
 
 test_that("Convert factor vectors to actual numerical values", {

@@ -18,13 +18,22 @@
 <!-- Font Awesome icons -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+<!-- clipboard.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script>
+
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
-<script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-  
-  
+
+
+
+<meta property="og:title" content="Function reference" />
+
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -47,12 +56,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">boysel</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">boysel</a>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">2017.7.28.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
@@ -70,6 +83,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -77,154 +91,150 @@
       
       </header>
 
-      <div class="row">
-  <div class="col-md-9">
+<div class="row">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1>
-        Reference
-        <small>version&nbsp;2017.7.28.9000</small>
-      </h1>
+      <h1>Reference</h1>
     </div>
 
-    <div class="contents">
-      <table class="ref-index">
+    <table class="ref-index">
 
-      <colgroup>
-        <col class="alias" />
-        <col class="title" />
-      </colgroup>
+    <colgroup>
+      
+      <col class="alias" />
+      <col class="title" />
+    </colgroup>
 
-      <tbody>
-        <tr>
-          <th colspan="2">
-            <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-            <p class="section-desc"></p>
-          </th>
-        </tr>
-        <tr>
-          <!--  -->
-          <td>
-            <p><code><a href="as_numeric.html">as_numeric</a></code> </p>
-          </td>
-          <td><p>Converting factors to numeric</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="catf.html">catf</a></code> </p>
-          </td>
-          <td><p>Print the contents of a file</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="clear.html">clear</a></code> </p>
-          </td>
-          <td><p>Remove all objects in an environment</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="cv.html">cv</a></code> </p>
-          </td>
-          <td><p>Coefficient of Variation</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="group_demean.html">group_demean</a></code> </p>
-          </td>
-          <td><p>Subtract mean values by grouping factor</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="logical.html">is_char_numeric</a></code> <code><a href="logical.html">is_formula</a></code> </p>
-          </td>
-          <td><p>Logical operators</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="most_freq.html">most_freq</a></code> </p>
-          </td>
-          <td><p>Calculate most frequently occuring value in a vector</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="n.html">n</a></code> </p>
-          </td>
-          <td><p>Count the number of non-NA observations in a vector</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="notes_pdf.html">notes_pdf</a></code> </p>
-          </td>
-          <td><p>R Markdown Notes Template (PDF)</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="project_template.html">project_template</a></code> </p>
-          </td>
-          <td><p>Create new project</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="read_text.html">read_text</a></code> </p>
-          </td>
-          <td><p>Data I/O convenience functions</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="recode.html">recode</a></code> <code><a href="recode.html">binary_recode</a></code> </p>
-          </td>
-          <td><p>Flexible vector recoding</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="reshape_stata.html">wide_to_long</a></code> <code><a href="reshape_stata.html">long_to_wide</a></code> </p>
-          </td>
-          <td><p>Reshape the Stata way</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="sample_df.html">sample_df</a></code> </p>
-          </td>
-          <td><p>Randomly sample a data.frame</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="scaling-functions.html">center</a></code> <code><a href="scaling-functions.html">unit_range</a></code> <code><a href="scaling-functions.html">unit_length</a></code> </p>
-          </td>
-          <td><p>Numeric vector rescaling functions</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="shuffle.html">shuffle</a></code> </p>
-          </td>
-          <td><p>Shuffle an object</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="strings.html">trim</a></code> <code><a href="strings.html">chomp</a></code> <code><a href="strings.html">text_wrap</a></code> <code><a href="strings.html">translit</a></code> <code><a href="strings.html">rand_string</a></code> </p>
-          </td>
-          <td><p>String / text processing functions</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="sumstats.html">sumstats</a></code> </p>
-          </td>
-          <td><p>Simple summary statistics</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="symdiff.html">symdiff</a></code> </p>
-          </td>
-          <td><p>Symmetric set difference</p></td>
-        </tr><tr>
-          <!--  -->
-          <td>
-            <p><code><a href="temp_dir.html">temp_dir</a></code> </p>
-          </td>
-          <td><p>Create a temporary directory</p></td>
-        </tr>
-      </tbody>
-      </table>
-    </div>
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="as_numeric.html">as_numeric()</a></code> </p>
+        </td>
+        <td><p>Converting factors to numeric</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="catf.html">catf()</a></code> </p>
+        </td>
+        <td><p>Print the contents of a file</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="clear.html">clear()</a></code> </p>
+        </td>
+        <td><p>Remove all objects in an environment</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="cv.html">cv()</a></code> </p>
+        </td>
+        <td><p>Coefficient of Variation</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="group_demean.html">group_demean()</a></code> </p>
+        </td>
+        <td><p>Subtract mean values by grouping factor</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="logical.html">is_char_numeric()</a></code> <code><a href="logical.html">is_formula()</a></code> </p>
+        </td>
+        <td><p>Logical operators</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="most_freq.html">most_freq()</a></code> </p>
+        </td>
+        <td><p>Calculate most frequently occuring value in a vector</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="n.html">n()</a></code> </p>
+        </td>
+        <td><p>Count the number of non-NA observations in a vector</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="notes_pdf.html">notes_pdf()</a></code> </p>
+        </td>
+        <td><p>R Markdown Notes Template (PDF)</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="project_template.html">project_template()</a></code> </p>
+        </td>
+        <td><p>Create new project</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="read_text.html">read_text()</a></code> </p>
+        </td>
+        <td><p>Data I/O convenience functions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="recode.html">recode()</a></code> <code><a href="recode.html">binary_recode()</a></code> </p>
+        </td>
+        <td><p>Flexible vector recoding</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="reshape_stata.html">wide_to_long()</a></code> <code><a href="reshape_stata.html">long_to_wide()</a></code> </p>
+        </td>
+        <td><p>Reshape the Stata way</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sample_df.html">sample_df()</a></code> </p>
+        </td>
+        <td><p>Randomly sample a data.frame</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="scaling-functions.html">center()</a></code> <code><a href="scaling-functions.html">unit_range()</a></code> <code><a href="scaling-functions.html">unit_length()</a></code> </p>
+        </td>
+        <td><p>Numeric vector rescaling functions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="shuffle.html">shuffle()</a></code> </p>
+        </td>
+        <td><p>Shuffle an object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="strings.html">trim()</a></code> <code><a href="strings.html">chomp()</a></code> <code><a href="strings.html">text_wrap()</a></code> <code><a href="strings.html">translit()</a></code> <code><a href="strings.html">rand_string()</a></code> </p>
+        </td>
+        <td><p>String / text processing functions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="sumstats.html">sumstats()</a></code> </p>
+        </td>
+        <td><p>Simple summary statistics</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="symdiff.html">symdiff()</a></code> </p>
+        </td>
+        <td><p>Symmetric set difference</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="temp_dir.html">temp_dir()</a></code> </p>
+        </td>
+        <td><p>Create a temporary directory</p></td>
+      </tr>
+    </tbody>
+    </table>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -241,11 +251,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="http://hadley.github.io/pkgdown/">pkgdown</a>.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
    </div>
 
+  
+
   </body>
 </html>
+

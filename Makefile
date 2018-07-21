@@ -1,12 +1,14 @@
-R := $(wildcard R/*.R)
+R=/usr/local/bin/R
 
-all: docs
+all: README.md check docs
 
-check: $(R)
-		R -e "devtools::check()"
+README.md: README.Rmd
+	$(R) -e "knitr::knit('README.Rmd')"
+	rm -f README.html
 
-docs: check $(R)
-		R -e "pkgdown::build_site()"
-	  
-clean:
-		rm -rf README.md docs
+docs: R/*.R tests/testthat/*.R _pkgdown.yml
+	$(R) -e "devtools::document()"
+	$(R) -e "pkgdown::build_site()"
+
+check: R/*.R tests/testthat/*.R _pkgdown.yml
+	$(R) -e "devtools::check()"

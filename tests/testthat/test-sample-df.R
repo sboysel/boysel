@@ -1,3 +1,4 @@
+library(boysel)
 context("Sampling data.frames")
 
 test_that("sample_df() works with integers and numbers in (0, 1).", {

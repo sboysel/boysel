@@ -41,7 +41,7 @@ returns a vector coerced according to the various recoding arguments provided.
 \description{
 Collapse multiple original values of a vector into single new values.  An
 alternative to nested \code{ifelse()} statements, \code{\link[dplyr]{recode}},
-\code{\link[plyr]{revalue}}, and \code{\link[car]{recode}}
+and \code{\link[plyr]{revalue}}.
 }
 \details{
 Further information on \code{recode()}'s primary value mapping arguments:

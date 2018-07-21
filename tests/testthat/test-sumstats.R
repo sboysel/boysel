@@ -1,3 +1,4 @@
+library(boysel)
 context("Summary Statistics")
 
 test_that("sumstats variable permutations output correct number of dimensions", {
