@@ -1,15 +1,14 @@
+library(boysel)
 context("Logical operators")
 
 test_that("is_char_numeric()", {
-  x <- c(1, 3, "3", NA)
-  xx <- c(x, "A")
-  expect_true(is_char_numeric(x))
-  expect_false(is_char_numeric(xx))
+  expect_identical(is_char_numeric(c(1, 3, "3", NA)), c(T, T, T, NA))
+  expect_identical(is_char_numeric(c(1, 3, "3", NA, "A")), c(T, T, T, NA, F))
 })
 
 test_that("is_formula()", {
-  f <- "y ~ x"
-  ff <- stats::as.formula(f)
-  expect_false(is_formula(f))
-  expect_true(is_formula(ff))
+  expect_false(is_formula("y ~ x"))
+  expect_true(is_formula(stats::as.formula("y ~ x")))
+  expect_identical(is_formula(c(w ~ x, w ~ y, w ~ z)), c(T, T, T))
+  expect_identical(is_formula(c(w ~ x, w ~ y, w ~ z, "y ~ x")), c(T, T, T, F))
 })
