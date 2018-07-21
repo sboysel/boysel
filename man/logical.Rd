@@ -26,15 +26,11 @@ Test an object \code{x}.  See Details for an explanation of how each function op
 }
 }
 \examples{
-x <- c(1, 3, "3", NA)
-xx <- c(x, "A")
-is_char_numeric(x)
-f <- "y ~ x"
-is_formula(f)
-ff <- as.formula(f)
-is_formula(ff)
-\dontrun{
-is_char_numeric(xx) # FALSE
-}
+
+is_char_numeric(c(1, 3, "3", NA))
+is_char_numeric(c(1, 3, "3", NA, "A"))
+ 
+is_formula("y ~ x")
+is_formula(as.formula("y ~ x"))
 
 }
