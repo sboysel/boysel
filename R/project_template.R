@@ -17,6 +17,17 @@ project_template <- function(path, use_git, use_packrat) {
     to = file.path(path, ".Rprofile")
   )
   
+  rprofile_appends <- file(description = tempfile())
+  
+  cat("foo\n", file = rprofile_appends)
+  
+  close(rprofile_appends)
+  
+  file.append(
+    file.path(path, ".Rprofile"),
+    rprofile_appends
+  )
+  
   for (x in c("analysis", "build")) {
     for (y in c("input", "code", "temp", "output")) {
       dir.create(file.path(path, x, y), showWarnings = FALSE, recursive = TRUE)

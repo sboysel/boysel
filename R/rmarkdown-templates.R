@@ -25,7 +25,8 @@ notes_pdf <- function(...,
                                         "+footnotes",
                                         "+table_captions",
                                         "+pipe_tables")) {
-  template <- system.file("rmarkdown", "templates", "notes", "resources", "notes.tex", package = "boysel")
+  template <- system.file("rmarkdown", "templates", "notes", "resources", 
+                          "notes.tex", package = "boysel")
   inherit_pdf_document(...,
                        template = template,
                        keep_tex = keep_tex,
